@@ -14,7 +14,7 @@ Esto es un codigo
 
 esto s un `codigo`  en line
 
-:) <3 ::skull::
+:) <3 :💀
 
 -----------
 ## Tarea
