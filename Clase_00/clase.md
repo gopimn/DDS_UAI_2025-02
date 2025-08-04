@@ -6,7 +6,7 @@
 
 ### la presentacion
 
-[https://docs.google.com/presentation/d/1LATUVUWYRXZ1I2YQTdkNFve22xcIc1ml4ji0AdpE72I/edit?pli=1&slide=id.g2f1646eb2f2_0_259#slide=id.g2f1646eb2f2_0_259](link a la press)
+[LINK!!]([link a la press](https://docs.google.com/presentation/d/1LATUVUWYRXZ1I2YQTdkNFve22xcIc1ml4ji0AdpE72I/edit?pli=1&slide=id.g2f1646eb2f2_0_259#slide=id.g2f1646eb2f2_0_259))
 
 ```
 Esto es un codigo
