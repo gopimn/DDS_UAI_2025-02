@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown a Tarjetas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.0/marked.min.js"></script>
+    <!-- DOMPurify for sanitizing HTML -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.6/purify.min.js"></script>
+    <style>
+        /* Custom styles for the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Ensure the textarea expands */
+        textarea {
+            resize: vertical; /* Allow vertical resizing */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+    <div class="container mx-auto bg-white p-6 rounded-xl shadow-lg w-full max-w-4xl">
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-6 text-center">
+            Markdown a Tarjetas
+        </h1>
 
+        <div class="mb-6">
+            <label for="markdownInput" class="block text-gray-700 text-lg font-semibold mb-2">
+                Ingresa tu Markdown aquí:
+            </label>
+            <textarea
+                id="markdownInput"
+                class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 text-base"
+                rows="10"
+                placeholder="## Título de la Tarjeta 1
+- Elemento 1
+- Elemento 2
+
+## Título de la Tarjeta 2
+Descripción de la tarjeta 2 con **texto en negrita** y *cursiva*.
+"
+            ></textarea>
+        </div>
+
+        <button
+            id="convertButton"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75"
+        >
+            Convertir a Tarjetas
+        </button>
+
+        <div id="cardsContainer" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const markdownInput = document.getElementById('markdownInput');
+            const convertButton = document.getElementById('convertButton');
+            const cardsContainer = document.getElementById('cardsContainer');
+
+            // Set default markdown content for demonstration
+            markdownInput.value = `## Tarea Pendiente
+- Investigar nueva librería JS
+- Escribir borrador de informe
+- Enviar correo a equipo
+
+## Idea para Proyecto
+Breve descripción de la idea del proyecto.
+Con **énfasis** en la innovación y la *escalabilidad*.
+
+## Notas de Reunión
+- Decisión 1: Implementar característica X
+- Decisión 2: Revisar diseño UI/UX
+`;
+
+            convertButton.addEventListener('click', () => {
+                const markdownText = markdownInput.value;
+                cardsContainer.innerHTML = ''; // Clear previous cards
+
+                // Split markdown by top-level headings (##) to identify cards
+                // Use a regex to split, keeping the delimiter
+                const cardSections = markdownText.split(/(?=^##\s)/gm);
+
+                cardSections.forEach(section => {
+                    section = section.trim();
+                    if (!section) return;
+
+                    // Extract title and content
+                    const lines = section.split('\n');
+                    let title = 'Tarjeta sin Título';
+                    let contentMarkdown = '';
+
+                    if (lines[0].startsWith('## ')) {
+                        title = lines[0].substring(3).trim();
+                        contentMarkdown = lines.slice(1).join('\n').trim();
+                    } else {
+                        // If the first line is not a heading, treat the whole section as content for a default card
+                        contentMarkdown = section;
+                    }
+
+                    // Convert content Markdown to HTML using marked.js and sanitize with DOMPurify
+                    const rawHtml = marked.parse(contentMarkdown);
+                    const cleanHtml = DOMPurify.sanitize(rawHtml);
+
+                    // Create card element
+                    const cardElement = document.createElement('div');
+                    cardElement.className = 'bg-white p-5 rounded-lg shadow-md border border-gray-200 flex flex-col';
+                    cardElement.innerHTML = `
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">${title}</h3>
+                        <div class="text-gray-700 text-base leading-relaxed flex-grow">${cleanHtml}</div>
+                    `;
+                    cardsContainer.appendChild(cardElement);
+                });
+            });
+
+            // Trigger conversion on initial load with default content
+            convertButton.click();
+        });
+    </script>
+</body>
+</html>
