@@ -1,0 +1,55 @@
+body{
+        background-color: turquoise;
+        font-family: 'Roboto',sans-serif;
+}
+    
+h1, h2, h3, h3, title{
+    text-align: center;
+}
+
+iframe{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px blue;
+}
+
+p{
+    color:brown;
+    /* font-size: 24px; */
+}
+
+div h2{
+    color: sienna;
+}
+
+/* ID Y CLASES */
+/* IDS son unicos por elementos pero las clases se pueden repetir */
+
+#Parrafo-Particular{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.parrafo{
+    color: darkgreen;
+    font-style: italic;
+}
+
+img, a{
+    display: block;
+}
+
+a{
+    margin: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: chartreuse;
+}
+
+img{
+    width: 70%;
+    margin: auto;
+}
