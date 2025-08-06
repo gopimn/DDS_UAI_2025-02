@@ -34,4 +34,4 @@ Hagan un HTML con CSS que tenga:
 
 vean este video lo encontre muy completo:
 
-![Video tiutorial](https://www.youtube.com/watch?v=QoC4RxNIs5M)
+- [Video tiutorial](https://www.youtube.com/watch?v=QoC4RxNIs5M)
