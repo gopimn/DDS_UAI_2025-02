@@ -30,4 +30,8 @@ Hagan un HTML con CSS que tenga:
 - Hipervinculo
 - lista 
 
+## extras
 
+vean este video lo encontre muy completo:
+
+[](https://www.youtube.com/watch?v=QoC4RxNIs5M)
