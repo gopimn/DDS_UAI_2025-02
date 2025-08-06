@@ -9,9 +9,6 @@ body {
     align-items: center;
 }
 
-h1 {
-    text-align: center;
-}
 
 .logo-container {
     display: flex;
