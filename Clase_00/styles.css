@@ -5,6 +5,13 @@ body {
     font-family: 'Rajdhani', sans-serif;
     background-color: #000000; /* fondo negro */
     color: #ffffff; /* texto blanco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
 }
 
 
