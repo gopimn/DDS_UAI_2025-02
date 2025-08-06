@@ -1,10 +1,9 @@
-/* Importa una fuente similar a la de la página de Muse */
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
 
 body {
     font-family: 'Rajdhani', sans-serif;
-    background-color: #000000; /* fondo negro */
-    color: #ffffff; /* texto blanco */
+    background-color: #000000; 
+    color: #ffffff; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,5 +13,21 @@ h1 {
     text-align: center;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    padding-top: 40px;
+    width:250px;
+    height: auto;
+}
+
+
+#body-img {
+    width: 400px;
+    height: auto;
+}
 
 
