@@ -75,6 +75,8 @@ https://danielkummer.github.io/git-flow-cheatsheet/
 
 ## tarea 2
 
+JUEVES EN LA NOCHE
+
 - La temática es libre, puede ser una página de una tienda; sobre su serie o película favorita. (usar misma tematica de la tarea 1)
 - Carousel (Imágenes a elección)
 - Texto en 2 columnas, que permita demostrar que en Desktop se ve como 2 columnas y en móvil es una sola columna.
@@ -83,7 +85,7 @@ https://danielkummer.github.io/git-flow-cheatsheet/
 - Agreguen tambien bootstrap
 - QUe el CSS este en otro archivo
 - Generen un pull request hacia su rama principal
-
+- No mergeen el pull request, dejenlo abierto, lo cerrara el profesor como parte de la revision de la tarea
 
 ## Como actualizar su rama
 Para verificar en que rama estamos
@@ -97,5 +99,13 @@ git checkout test
 pulliar del origin
 
 ```
-git pull origin/main
+git pull origin main --rebase
 ```
+```
+git push -f 
+```
+## Para la otra clase
+
+- Pruebas y medir en que lugar estamos
+- revision tareas
+- Figma!
