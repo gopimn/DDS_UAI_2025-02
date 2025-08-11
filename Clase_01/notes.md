@@ -83,3 +83,19 @@ https://danielkummer.github.io/git-flow-cheatsheet/
 - Agreguen tambien bootstrap
 - QUe el CSS este en otro archivo
 - Generen un pull request hacia su rama principal
+
+
+## Como actualizar su rama
+Para verificar en que rama estamos
+```
+git status
+```
+Para cambiar a su rama especifica, lest say `test`
+```
+git checkout test
+```
+pulliar del origin
+
+```
+git pull origin/main
+```
