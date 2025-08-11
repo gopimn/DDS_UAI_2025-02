@@ -68,3 +68,18 @@ Tubimos problemas porque nos pisamos los ssh keys :)
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
+### git flow
+
+https://danielkummer.github.io/git-flow-cheatsheet/
+
+
+## tarea 2
+
+- La temática es libre, puede ser una página de una tienda; sobre su serie o película favorita. (usar misma tematica de la tarea 1)
+- Carousel (Imágenes a elección)
+- Texto en 2 columnas, que permita demostrar que en Desktop se ve como 2 columnas y en móvil es una sola columna.
+- Texto en accordion (2 colapsables)
+- Generar otra rama, basada en su rama
+- Agreguen tambien bootstrap
+- QUe el CSS este en otro archivo
+- Generen un pull request hacia su rama principal
