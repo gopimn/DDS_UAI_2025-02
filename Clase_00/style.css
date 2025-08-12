@@ -1,0 +1,26 @@
+body {
+  background: #fffdff; 
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  color: #e24272;
+}
+
+.nav-link {
+  color: black;
+}
+
+#blog-link {
+  color: #e24272;
+}
+
+#productos {
+  background: #000000;
+  color: #fffdff;
+  border: 0;
+}
+
+#productos:hover {
+  border: 2px solid #000000;
+}
