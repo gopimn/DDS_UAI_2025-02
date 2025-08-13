@@ -25,6 +25,14 @@ h1 {
   border: 2px solid #000000;
 }
 
+.link_vogue {
+  color: #e24272;
+}
+
+#laneige {
+  color: #e24272;
+}
+
 .carousel-container {
   max-width: 400px; /* tamaño máximo */
   margin: 0 auto;   /* centrar */
