@@ -24,3 +24,13 @@ h1 {
 #productos:hover {
   border: 2px solid #000000;
 }
+
+.carousel-container {
+  max-width: 400px; /* tamaño máximo */
+  margin: 0 auto;   /* centrar */
+}
+
+.carousel-container img {
+  height: auto;
+  border-radius: 10px; /* opcional, esquinas redondeadas */
+}
