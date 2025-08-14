@@ -33,12 +33,25 @@ h1 {
   color: #e24272;
 }
 
-.carousel-container {
-  max-width: 400px; /* tamaño máximo */
-  margin: 0 auto;   /* centrar */
+.accordion-button {
+  background-color: #ff69b4; 
+  color: #fff; 
 }
 
-.carousel-container img {
+.accordion-button:not(.collapsed) {
+  background-color: pink; 
+  color: #fff;
+}
+
+/* Quitar el fondo azul del foco */
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.5);
+}
+
+.carousel-inner img {
+  max-width: 400px; 
+  margin: auto; 
   height: auto;
-  border-radius: 10px; /* opcional, esquinas redondeadas */
+  max-height: 400px;
+  object-fit: contain;
 }
