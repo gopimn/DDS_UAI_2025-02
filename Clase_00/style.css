@@ -1,0 +1,57 @@
+body {
+  background: #fffdff; 
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  color: #e24272;
+}
+
+.nav-link {
+  color: black;
+}
+
+#blog-link {
+  color: #e24272;
+}
+
+#productos {
+  background: #000000;
+  color: #fffdff;
+  border: 0;
+}
+
+#productos:hover {
+  border: 2px solid #000000;
+}
+
+.link_vogue {
+  color: #e24272;
+}
+
+#laneige {
+  color: #e24272;
+}
+
+.accordion-button {
+  background-color: #ff69b4; 
+  color: #fff; 
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: pink; 
+  color: #fff;
+}
+
+/* Quitar el fondo azul del foco */
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.5);
+}
+
+.carousel-inner img {
+  max-width: 400px; 
+  margin: auto; 
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
