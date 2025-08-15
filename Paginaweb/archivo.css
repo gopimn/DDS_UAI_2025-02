@@ -1,0 +1,148 @@
+#Titulo{ 
+    color: green;
+background-color: rgb(255, 153, 0,0.6);}
+
+    #bajada{
+    color: rgb(109, 24, 24);
+background-color:rgb(255, 227, 194,0.3)  }
+   
+/* Personalización del carrusel */
+.carousel {
+  max-width: 800px; /* Ajusta el ancho máximo */
+  margin: 2rem auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Estilo para las imágenes del carrusel */
+.carousel-item img {
+  border-radius: 8px;
+  object-fit: cover;
+  height: 400px; /* Altura fija para todas las imágenes */
+}
+
+/* Personalización de los controles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding: 1.5rem;
+}
+
+/* Personalización de los indicadores */
+.carousel-indicators button {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50%;
+  margin: 0 5px !important;
+}
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Contenedor de columnas */
+.columnas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.columna {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Nota sobre responsive */
+.nota-responsive {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .columnas {
+        flex-direction: column;
+    }
+    
+    .columna {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos generales del acordeón */
+.acordeon {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para cada ítem del acordeón */
+.acordeon-item {
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Ocultamos el input checkbox */
+.acordeon-item input {
+    display: none;
+}
+
+/* Estilos para el título del acordeón */
+.acordeon-titulo {
+    display: block;
+    padding: 15px;
+    background-color: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse */
+.acordeon-titulo:hover {
+    background-color: #e9e9e9;
+}
+
+/* Estilos cuando el acordeón está expandido */
+.acordeon-item input:checked + .acordeon-titulo {
+    background-color: #ddd;
+}
+
+/* Estilos para el contenido del acordeón */
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 15px;
+    background-color: white;
+}
+
+/* Mostramos el contenido cuando el checkbox está marcado */
+.acordeon-item input:checked ~ .acordeon-contenido {
+    max-height: 500px; /* Ajusta este valor según tu contenido */
+    padding: 15px;
+}
