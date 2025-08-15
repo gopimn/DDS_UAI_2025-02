@@ -1,0 +1,21 @@
+/* Estilos personalizados para la página de memes */
+body {
+    background-color: #f8f9fa;
+}
+
+header {
+    background: linear-gradient(to right, #ff6a00, #ffcc00);
+}
+
+h1 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.carousel img {
+    height: 500px;
+    object-fit: cover;
+}
+
+section h3 {
+    color: #ff6a00;
+}
