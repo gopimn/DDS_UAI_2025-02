@@ -9,7 +9,6 @@ body {
     align-items: center;
 }
 
-
 .logo-container {
     display: flex;
     justify-content: center;
@@ -21,10 +20,8 @@ body {
     height: auto;
 }
 
-
-#body-img {
+#museCarousel {
     width: 400px;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
 }
-
-
