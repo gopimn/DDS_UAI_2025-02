@@ -8,20 +8,6 @@
     <title>Tarea 1 DDS</title>
 </head>
 <body>
-    <style>
-        .columns-demo {
-            display: flex;
-            gap: 1rem;
-        }
-        .columns-demo > div {
-            flex: 1;
-        }
-        @media (max-width: 600px) {
-            .columns-demo {
-                flex-direction: column;
-            }
-        }
-        </style>
     <div>
         <div class="logo-container">
             <img id="logo" src="https://i.redd.it/kl1g4pt1pkc91.jpg">
@@ -62,10 +48,10 @@
                 </ul>
             </div>
         </div>
-    
+        
         <h2>Video de Uprising</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/w8KQmps-Sog?si=H0hivaFNpYJP-KVp&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
+        
         <h2>Fotos</h2>
         <div id="museCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -83,7 +69,33 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
         </div>
-    
+        
+        <div class="accordion my-4" id="museAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Curiosidades de Muse
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#museAccordion">
+                    <div class="accordion-body">
+                        Muse es conocida por incorporar elementos de ciencia ficción y política en sus letras y presentaciones en vivo, utilizando efectos visuales y tecnología avanzada en sus conciertos.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Influencias Musicales
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#museAccordion">
+                    <div class="accordion-body">
+                        Entre las influencias de Muse se encuentran Queen, Radiohead y compositores clásicos como Rachmaninoff, lo que se refleja en su estilo teatral y experimental.
+                    </div>
+                </div>
+            </div>
+        </div>
         <h2>Explora mas</h2>
         <button>
             <a href="https://www.muse.mu" target="_blank">Pagina Oficial</a>
