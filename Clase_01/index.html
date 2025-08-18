@@ -8,11 +8,25 @@
     <title>Tarea 1 DDS</title>
 </head>
 <body>
+    <style>
+        .columns-demo {
+            display: flex;
+            gap: 1rem;
+        }
+        .columns-demo > div {
+            flex: 1;
+        }
+        @media (max-width: 600px) {
+            .columns-demo {
+                flex-direction: column;
+            }
+        }
+        </style>
     <div>
         <div class="logo-container">
             <img id="logo" src="https://i.redd.it/kl1g4pt1pkc91.jpg">
         </div>
-    
+        
         <h2>Historia</h2>
         <p>Banda con orígenes en Teignmouth, Inglaterra a fines de los años 90.</p>
         <h2>Miembros actuales</h2>
@@ -26,10 +40,28 @@
             <li>
                 <h3>Chris Wolstenholme</h3>
             </li>
-    
+            
         </ul>
         <h2>Estilo musical</h2>
         <p>Rock alternativo</p>
+        <div class="columns-demo">
+            <div>
+                <h3>Discografía Destacada</h3>
+                <ul>
+                    <li><strong>Origin of Symmetry</strong> (2001): El álbum que consolidó el sonido experimental y épico de Muse.</li>
+                    <li><strong>Absolution</strong> (2003): Incluye éxitos como "Time Is Running Out" y "Hysteria".</li>
+                    <li><strong>Black Holes and Revelations</strong> (2006): Con el himno "Starlight" y la icónica "Knights of Cydonia".</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Premios y Reconocimientos</h3>
+                <ul>
+                    <li>Grammy al Mejor Álbum de Rock por "The Resistance" (2011).</li>
+                    <li>Brit Awards a Mejor Grupo Británico (2010, 2012).</li>
+                    <li>Reconocidos por sus espectáculos en vivo innovadores y energéticos.</li>
+                </ul>
+            </div>
+        </div>
     
         <h2>Video de Uprising</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/w8KQmps-Sog?si=H0hivaFNpYJP-KVp&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
