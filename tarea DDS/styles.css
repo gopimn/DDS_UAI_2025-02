@@ -1,0 +1,662 @@
+/* Estilos personalizados para la página de Golf */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #455a64 50%, #37474f 75%, #263238 100%);
+    color: #f5f5f5;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* Contenedor principal para todas las secciones */
+.content-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #4fc3f7;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+/* Párrafos con estilo elegante */
+p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Listas con estilo */
+ul {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li:hover {
+    background: rgba(79, 195, 247, 0.1);
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+/* Video iframe con estilo */
+iframe {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+iframe:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para imágenes con diseño elegante */
+.img-small {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.img-small:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 15px 35px rgba(79, 195, 247, 0.4);
+    border-color: #4fc3f7;
+}
+
+.img-large {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border: 3px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    display: block;
+}
+
+.img-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 45px rgba(79, 195, 247, 0.4);
+}
+
+/* Contenedor para las imágenes */
+.images-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Botones con diseño elegante */
+.boton {
+    background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    margin: 15px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(79, 195, 247, 0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.boton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.boton:hover::before {
+    left: 100%;
+}
+
+.boton:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(79, 195, 247, 0.5);
+    background: linear-gradient(135deg, #29b6f6, #4fc3f7);
+}
+
+.boton:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Enlaces con estilo elegante */
+a {
+    color: #4fc3f7;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+    transition: width 0.3s ease;
+}
+
+a:hover {
+    color: #29b6f6;
+    text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Formularios con estilo elegante */
+form {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+form p {
+    font-weight: 600;
+    color: #4fc3f7;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+form label:hover {
+    background: rgba(79, 195, 247, 0.1);
+    padding-left: 15px;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #4fc3f7;
+}
+
+form button[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+}
+
+/* Estilos para el texto en dos columnas usando Bootstrap */
+.column {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(79, 195, 247, 0.2);
+    border-color: rgba(79, 195, 247, 0.3);
+}
+
+.column h4 {
+    color: #4fc3f7;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(79, 195, 247, 0.3);
+    position: relative;
+}
+
+.column h4::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+}
+
+.column p {
+    text-align: justify;
+    line-height: 1.7;
+    color: #e8e8e8;
+}
+
+/* Estilos para el carousel personalizado */
+.carousel-container {
+    margin: 20px 0;
+}
+
+/* Estilos personalizados para el acordeón de Bootstrap */
+.accordion-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    margin: 0 auto 40px;
+    max-width: 900px;
+}
+
+.accordion {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.accordion-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.accordion-button {
+    background: linear-gradient(135deg, rgba(79, 195, 247, 0.8), rgba(41, 182, 246, 0.8));
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1.2rem 1.5rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.accordion-button:hover::before {
+    left: 100%;
+}
+
+.accordion-button:hover {
+    background: linear-gradient(135deg, rgba(79, 195, 247, 0.9), rgba(41, 182, 246, 0.9));
+    transform: scale(1.02);
+}
+
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(79, 195, 247, 0.25);
+    border: none;
+}
+
+.accordion-button::after {
+    background-image: none;
+    content: '▼';
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+/* FIX CRÍTICO: Asegurar que el contenido colapsado esté oculto */
+.accordion-collapse:not(.show) {
+    display: none;
+}
+
+.accordion-collapse.show {
+    display: block;
+}
+
+.accordion-body {
+    background: rgba(51, 51, 51, 0.9);
+    color: #f5f5f5;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.accordion-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #4fc3f7, #29b6f6, #4fc3f7);
+}
+
+.accordion-body strong {
+    color: #4fc3f7;
+    font-size: 1.1rem;
+}
+
+/* Animación de entrada para el accordion */
+.accordion-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Efecto de pulso en los botones activos */
+.accordion-button:not(.collapsed) {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(79, 195, 247, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+    }
+}
+
+/* Responsive para accordion */
+@media (max-width: 768px) {
+    .accordion-container {
+        margin: 0 15px 40px;
+        padding: 20px;
+    }
+    
+    .accordion-button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .accordion-body {
+        padding: 1.2rem;
+    }
+}
+
+/* Estilos adicionales de Bootstrap override */
+.bg-dark-custom {
+    background-color: #222 !important;
+}
+
+.text-light-custom {
+    color: #f5f5f5 !important;
+}
+
+/* Estilos para el carousel elegante */
+h2 {
+    color: #4fc3f7;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.carousel-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    margin: 0 auto 40px;
+    max-width: 900px;
+}
+
+.carousel {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* FIX CRÍTICO: Ocultar todos los carousel-item por defecto */
+.carousel-item {
+    display: none;
+    position: relative;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Mostrar solo el item activo */
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item img,
+.carousel-item video {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.carousel-caption {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    border-radius: 0 0 15px 15px;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255,255,255,0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.carousel-indicators {
+    bottom: 20px;
+    z-index: 10;
+    margin-bottom: 0;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.carousel-indicators button.active {
+    background: white;
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Efectos de hover en las imágenes */
+.carousel-item:hover {
+    transform: scale(1.02);
+}
+
+/* Efecto de carga */
+.carousel-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        margin: 0 15px;
+        padding: 15px;
+    }
+    
+    .carousel-item img,
+    .carousel-item video {
+        height: 250px;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .carousel-control-prev {
+        left: 10px;
+    }
+    
+    .carousel-control-next {
+        right: 10px;
+    }
+}
