@@ -31,3 +31,12 @@ https://www.google.com/search?q=mouse+hover+css&rlz=1C1UUXU_esCL1062CL1062&oq=mo
         return hashedPassword;
     }
 ```
+## all tags
+
+https://www.w3schools.com/tags/
+
+
+## what is a picture tag ??
+
+https://www.w3schools.com/tags/tag_picture.asp
+
