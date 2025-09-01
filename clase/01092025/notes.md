@@ -40,3 +40,6 @@ https://www.w3schools.com/tags/
 
 https://www.w3schools.com/tags/tag_picture.asp
 
+## flex vs grid
+
+ https://carontestudio.com/blog/flexbox-vs-css-grid/
