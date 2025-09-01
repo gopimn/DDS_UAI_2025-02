@@ -109,7 +109,7 @@ Selector de clase: `.mi-clase { ... }` (selecciona elementos con class="mi-clase
 
 Selector de ID: `#mi-id { ... }` (selecciona un elemento con id="mi-id", único por página).
 
-Selector de descendiente: `ul li { ... }` (selecciona los `<li>`  dentro de un `<ul>`).
+~~Selector de descendiente: `ul li { ... }` (selecciona los `<li>`  dentro de un `<ul>`).~~
 
 Selector universal: `* { ... }` (selecciona todos los elementos).
 
