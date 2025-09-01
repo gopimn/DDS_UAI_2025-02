@@ -20,4 +20,14 @@ https://www.google.com/search?q=mouse+hover+css&rlz=1C1UUXU_esCL1062CL1062&oq=mo
 
 <input type="password" id="password" name="password">
 
+## hashing a pass
 
+```
+    const bcrypt = require('bcryptjs');
+
+    async function hashPassword(plainTextPassword) {
+        const saltRounds = 10; // Recommended salt rounds for production
+        const hashedPassword = await bcrypt.hash(plainTextPassword, saltRounds);
+        return hashedPassword;
+    }
+```
