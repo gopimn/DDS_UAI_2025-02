@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 2 - Stranger Things</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Stranger Things</span>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div id="stCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUQEhIWFRESFRUXFxcXEBYVFRUaGBUXFhcXFRcYHSggGBolGxUWITEhJSkrLi4uFx8zODMsOCgtLisBCgoKDg0OGxAQGy0lICUvLS0tMC0tLS8rLS0uLS0tKy0tLS0tLS0tLS0tLy01LS0tLS0tLSstLS0tLS0tLS0tLf/AABEIAKYBLwMBEQACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAQIDBAUH/8QARBAAAQMBBAYFCAgFBAMBAAAAAQACEQMEEiExBSJBUWFxE1KBkaEUMnKxssHR0iMzQmJzkqKjFYKTs/BDU2PCg+HiFv/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EADsRAAIBAgIGCQMDBAICAwEAAAABAgMREiEEEzFBUXEyYYGRobHB0fAUIiMzUuFCcqLCYrKS8RUkggX/2gAMAwEAAhEDEQA/APhqAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAICUJsQhAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEBKgmwQkmEFhCE2EIRYQgsIQWEILCEFhCCwhCbCEFhCCwhBYQgsRCEWCEWCkWCCxCEBAEAQBAEBKE2CgWCCwQWCkEIQEAQBAEAQBAWAUFkuBIYdx7lFyyhLgW6M7j3JcvglwJ6M7j3KLonVy4DojuPcl0NXLgT0R3HuS6GrlwY6E7j3FMSJ1UuDJ6E9U9xTEhqpcGOgd1T3FMSJ1UuDJ6B3VPcVGJDVS4E+Tu6p/KUxItqZcB5O7qn8pTEhqZcCfJ3dU/lKYkNTPgyPJndU9xTEhqZcCfJ3dU9xTEhqZcCPJndU9xTEiNTLgQbO7qn8pU4kRqpcGV6B3VP5SmJFNXLgOgd1T+UpiQ1cuD7h0DuqfylMSI1cuD7iOgd1XflKnEiNXLg+4joHdV35Sl0NXLg+4dC7qn8pS6I1cuD7iOid1T3FTdDVy4PuHRO3HuKXQ1cuA6M7j3FRdDBLgOjO49yXJwPgOjO49xS4wPgOjO49yXGB8B0Z3HuS4wPgOjO49yXRGCXAoQpKNEKSAgCAIAgJQlGlJ8dvP3KrVzSnNxudFAOcYa0k8C4+9UlZbWdVJTqO0Y37X7nSLLU6o/q//Spij8R0qhV4L/y/kPoVGiTTMbwXEd4KKUXvJlTrR/p8X6Mya9xyaT2v+KtZGSnJ7F4v3Ly/qHvqfFRlx8i96n7X3y9yQ5/+2e+p8yjLj5C9T9r75e4dWcM2Ec3VB/2Sy+WIc5LbHxl7lRbD1f11PmU4fmRGvfDxl7lhbD1f3KnzKMPzIsqz4eMvct5aer+5U+ZRh+ZFte1u8Ze48vPV/cqfMpwfMh9S+HjL3JGkD1f3KvzqMHzIlaT1eMvct5eeqP6lX51GD5kW+ofDxfuQdInq/uVfnU4PmRD0l8PF+5B0ger+5V+dMHzIr9Q+HjL3KnSJ6v7lX51OD5kUlpPV4y9yv8QPV/dq/OrYPlkZ/UdX+Uvcj+Ind+7V+dNX8siPqer/ACl7ki3nq/u1fnUYPlkSq7e7/KXudNPpnCW0Xkbw+sf+yr9q3+RulVeyL75e5z1bW9phzCDxqVR63KyinsfkYzqzh0otdsvczdbz1f3KvzK2BfEjN6RLh4y9ynlx3fuVPmU4PmRX6l/HL3HlnD9yp8yjD8yJ1/y8vcjynh+t/wAyYRrurxl7kGud363/ABTCNa+HjL3HTnd+p/xU4RrXw8X7jpuH6nfFMI1r4eL9yOl4fqd8VFhrHw8X7kdNw/U74qcJGt6vF+5hUMmd6ujmm7u5VSUZCEBAEAQBAb2eledEwMSTuAEk9ypJ2RvSp45W7+S2m77UTqN1WbGj1u6x4qmFLNnU68pfZDKPD34s7LRZadLVqFzqm1rSAG8C4zJ34KilKWzYdM6VKkrTbb6jFgxmk5wduJg9hGal/wDIrGz/AEm78PZnQ5zi0OLiDALnSZ295xGHBUyvsOluTppuVuL7/dEOrTTLmuqS0tEmpgZDtgyy3qbZ2aRSVS9NyjKWVtrK2SqS17nOeboERUIzcBtnekkrpJEUKknGTlJ5Lj1pE4kFweXNj7RxacxI7DijtssWi5NOUZNrr3PaY1azmnBxEgHPeAVZRTRlVqzjLJ8H3o7qNtLQL76hLhOq4AAYjaDJwWTjfYjrhXwpY5O7zyK2+tUY4DpC5rgHAkDEEbQZx2dimCTWwrpFWpCWUrpnNbaYusqQAXAyAIEgxIGycO4q8Hm0c+kQTjGaVr+hXRo1p2AOJ5AJV2WJ0G6qYuCfkXr1qjDBcdhz3iVWMYyV0aVqtelLDJvcV0g4uDHb2jwJB8ZVqatdFNMk5qEnw/8AfiaWWs7o3NBi7BEcTBHHMdyrKKxXL6PWnqXFO1rNdrszO11arHFjnmQd/iFaMYSV0jKvV0ilNwlJ3RFWu4tY8GSyQTmQ6ZxnYRHcVMYq7XErUrVHGFRPo+D6+a2cmdBrPh7wT5lMtGYBqETA7HRzVVGOS5+BtLSKqxTi9qjZbk5Wv62K0rS2hg1rXVtrnAODDuYDgSN57N6lxc83sMlOOj/bFXlvfDqXI7n21zQHWirVe9wBDG1CIByLiZiRsAyWWG+UUdWt1cU6snd7kYutNOrg11Sm85X6l9h4GQLvPHsVsMo7VcrroVcoycX1vI8vSDCCL3nXYM7wS0+pbU2rZHn6XGWKLlttn2Nr0LPtDw1rg4gy5pjDzYI9rwUKKu0WnXqauMlLiu63udFmtbrpdUqPuggAB2JJBOZyGCrKKvZI2o154HOpJ22ZGT6od5rnA/eIPiAI7lNrbUVlUU8oyafX7kdI4S3K8J3GQPiEstoc5puOy+fbY5und1j3laYUcmuqfufebU3ZFz3Cd2JjfmFVrgjeEmknObz4f+ze10S1rajKhcx2G0EEbHCVSLTdmjWtGUYqcJtpmdhrAuDamswmDOYnaDsKmasropo9THNRqZp/NpzW+hce5nVcR3GFpCV1c49Jp6ubjwOZXOYhSQEAQBASgOiz+a8/dA73tlUltR1UehN9S80UpugyjVyKcsMkz0La7pnuqMzeZLZ1gTiY3iVlFYFZndW/PLHDfu3/AMnJBB2gjsKvkzmtKLzyZtXtRdhAAwOG+AJ8PEqsYJG9XSJVFZl6X1T/AEmep6h9JF4foy5r1LWT6ur6LfbaoltRND9OfL1RhRrlsxtBB5KzimZUqsoN235GlsbBHoM9gKIbDTSFmuS8kbGzl105ANEk4NGJzKopJXOh0ZTUXuss9282q0zV1hhSphrbx5YYbzBMKE8PNl5Q1zuujFbfnHgclsrXiAMGtENHDPHiSSe1XgrHNpFRSaS2LJHdouhq4/bcG/yt1nn2VlVlmduhUvsu97t2LNmWkzea2pvLgewyPBw7lalk7Gem3qRVTmvneYxepcWO8HD4t8VbZMw6dDk/B/yhYRqv5N9tqT2onRehPs80b20X3vpnz2vfcO/WJLPeOPNRD7Un3lq/5Zyg9qbt37Pbr5nn0Kl0wRLTg4cOHEZhayV9hw0p4HaWx5NfN63Hr2VkEiZAFng78TBWEnlfmenSgo1Ur3soZ955Oj6YdUY05Oc0HlOK3m7RbPM0ZYqkU97RFrtBqPc8/aJPLgkY4VYirVdSblxNmaNquaHhuq7IlzROMYSVDqRTtc0Wi1ZRU0snyNLVZ6rwwFkua27N9pLscNu5RGUI3dzWrSr11CODNK21Z+Jz1WxSZvD6nqpqy6T7PU55xtSinxl/qd2irK2qwsIqSHXtSkH7Ix1hH/tZ1JOMrnZolGNWk4u+2+XIi22RrGuaGvBbDtdt1xk3ctgxG1RGTbTLVqMIU5RSeVnn3HE2peLd4Ec81payZyqpjlG+5W8zmK0ONmtceb6I9ZVVvNqqyjy9Wa3opQftOBH8oIn9Xgq/1Gt2qFnvfki+jqQvdI7zGQTx3NHEqJvKyLaLTs9ZLYs/4OO01C5xcc3Ek9pWsVZWOKtNzk5PeYKxgQpKhAEAQEhAjey1ADDvNcC07wDtHIgHsVJK+w6KM1F/dseT+dW0VaJbnkciMjyKJ3LTpyht7HuZUIVR0stTog6w3OE9xzHYqOCOqGkStZ5rrzL1KILb7Mh5wzLd2O0KFJp2ZpKnGUMcO1cP4JpfVP8ASZ6nqH0kWh+hLmvU0sf1dX0W+2FEuki1D9OfL1RxDNaHItp2aQzb6FP2GrOnv7Ts0rbHkvJHWyzhzQyTfLLzcZBzloGzALNys7nWqanTUM72us/C3zM5bFaTTdBEtdg4bx8do4hXnHEjloVnSlZ7N5W1ULr4mRmDvBxB7lMZXQq0sM7I9g0y260BsMYA6866L1QFxEyMYw7Fz3TzPVScEkrZLf1mVrYOjcIuHBwEy12wlju3LHLNTBvEZ14w1TTVntXDsPP0eZLmddpHb5zfFo71tPLM87Rs24cVb1XiWsIwfyb7bVE9xpoyyn2eaMtLGK1T8R3tFWpdBHNpeVaXMrXF9vSDzh544nJ/I7ePNWjk8PcVqrWR1i2/1e/bv6+Z1aDPnelS9oqlb3Nv/wCf0nzXqcOjXxVpn7zfHD3rSovtZyaK7VYX4o5yIw2jBX2mFnHJ7j0rHUmzVmnYabhwMkSOwrGS/Imd1Kd9GnF7rHHZzDahGd0CebwD4LSW1IwovDCpJbbLxauWqfUs9Op7NNQuk+z1Ev0Y85f6mjXRR/8AJ/0UNff2GsZOOj5fu9ANIO6M0jBbsnEt33Tsn3Jq1e4+rngcHmZWZpmdg+BUyeRShFudzAq5zs6m1GQCQXECImG5nOMTywWdmdSnTsm020rdRm6redLssMBhhuG5WtZZFHUxzvL4uB16VBF2PqiJZGXGfvbDPqhZ07dp06YpKyj0d3zieW5bnlyKlSZsqpKhAEAQBAaUmEmAJKq2ltNacJTdorM0pVnNyOBzBxB5g4KGkzSnUlDJd27uNg9js23TvbiPyn3FVtJG6lSn0lbls7vZivQLYObXYgjI/wCbkUripScLPc9jNtGnXu7HBwPaD74PYqVNlzo0N/kw8ciaf1T/AEmep6PpImP6Mua9S1j+rq+i322qJ9JE0P058vVHGFoci2nVbs2+hT9hqzhv7Tr0nbHlHyRtWqFppOBghjSDxBKqle6NpyccDXBebJ0swXhUbg2oA6BsJkOHY4FKTys9xGlxV1NbzawtD7hdkw63oiX+53gqTyvbedVBKpCLf9O3lt9y+lbQSxu+o51Q9puj2T3qKUcyNMq2guvM5tHWifon4seY9EnAOG4jxC0qRtmjn0ati/HLY/lzlEsfxafEFX6SOfOlU5PyO9jQDUjI3SORe0jwWTd0jvUVGU7bMmuTaaOPTH11T03+0VrS6CPP0z9aXMxsla44HMZEHJwOYPAq0ldGNGeGaff1rej1jZeibXLDg00Xt5E3mz2ELBTxuN+s9F0NQpuO6zXmeRa6YBvt8x2I+6dreY9ULoi9z2nm14KLxw6L2dXVzXlmTa23vpRk7zvuu2g8CcRzSOX2smusf5o7Ht6nv79qJs5ilV3E0wOJku9QR9JdpSD/AAzf9q8blKHmVOTPbCPpL5uJpfpVOUf+yJqfVM9Op6qaLpPs9RL9GPOX+poxpNAx9moJ4S0geoqrdp9hpFOWj5bpehz06RcYAn/Nu5XbSMYUpTdoo7WQA1oxkmTvgbOGPgsnm7noRtCMYR3t9tl5HnrY8ved1OqBda76tzcRzJ1uY9yyavdrad8aijhhLotZ97z5nNXpFji07O47iOCundXOapTdOTizvsB6RjqBzxcz0gMQOYEcwFlP7XiO3R3rabpPmjyXhbo8qas7FCrGbKqSgQBAEBKA2obTw94VJHRRyu+ovVZOuMjnwPHgVCyyNakcX5Fse3qfzYZgKTNI77U27TYw+dLnRuDroE/lntCyjnJs76qwUYwe3NlbEYvP6oPeQQPXPYk88iNGeG8+C8XkielZdu6wEycASTEb8ks73Laynhwq/H5mWo1GNnziHCCCBlgd+8BRJSZalOlC+2zyeX8mMtvbbs8JhWzt1mN6aqXzw+J0VKtNxkh3YWwIEAZbgqJSR01KtCcsTT8BXtDC0AAy3AEkZYmMOJSMZJ3ZNWvSlTUYp3W98C9S003Na0h0NEZjbidm9QoyTuXlXoTgotPLrQp2im0EC/DsDi3HGdyOMnwEK9GKaWLPl7FLXaGOaAAZbhJIyxMQOJUwi08ymk16c4JRTuvIysNZrXS4ExlB27Cd6tOLayMdFqwpzxTV/c2fUokyekk8W/BVSnsyNJToSd3i8PYu+2U7tyH7MZbMCYGWWKhU5XuavS6ODBZ88r9SOXSFobUdfAIJ86SMTvwyWlOLirM4tKqwqSxRTXG/ExouAcC4EtBxAME9qs72yMISipJyV0ej/FWS+WuIqNDSLwgARdjDCLohZap5dR3/AFtJuTcZO+669jzKVctmIIOYIlp5j3rZxTPPhWlC9tj2p5p/O81pWlgN4New/cqYdzgTHaquLeWT5o0hXpxeJKUX/wAZe69Sa1oY/wA41TGWs2ByEIotbLE1K1Kp03N9q9hRq0mzqvIcIILm44g7BvASSk+BNKpo8L/bJpqzV182ln1qRDW3XgNBwDm5nEkyM/gESkrvITqUJKKtJJda7XsNbLaqdMyw1QYjBzMeBwxCrKMpbbF6ValSzji717EWi2tfmahG680DuAhFBrgXnpMJ5Ny71byM2PBc0DICMc8iSpassysZqVSKjsS9zlhaHHY2r/Z9Eesqkd5tV2R5erNKmtTDtrNU8jJb6iO5QspWNZ/fSUt6y7NxlZqxa4OGbSCOxWkrqxjRqOE00b6ZohtQlvmvAeOThejsmOxVpO8TTTqajUbWx5955pWx5zIKkqyEICAICQhKOmzMBDiXAQBzOIyCzlfI6qCi1LE7ZepsxjRiyrB4tLfVIVW3vRvCEFnCdn13XujRjnjEPp8wWA9+ahpcGaxlUWyUf8SjmCZfUBPCXE9pw8Uu9yKOMb3nO/LN+xSrVnACGjIe8naVKRSdTEsKVl82k2aneMEwACSYnADdKSdi1GCm7N2R2ssdMgkPqEDOKIw566yc5cDtjo9Fq+J938inZaLjAe8k7BRBPto5TW4RoUG7KT7v5LeRUiboe+9sBpAY8dbBRrJbbGi0SlJ4VJ35GLtHxEvYJE+cfgrKrfcZT0HDtku/+B/DsCQ9hAEmHH3jNNZnaxVaFeLkpLLr/gUtHlzOkvNDZgycRzAGEo6qTsKehOcMd0kQ2wyYD2EnifgjqW3Ex0LE7KS8fYmno4m8bzYaYJvYc8BlxR1bWyC0JvF9yy6/mRb+G7BVpk7g4yeWCa3qZX6O7spLx9jLyA62uzVME3p3bhljE71bWdTKPQ39zxRydnn/ABs9Shsn/LT/ADH5VOPqZi6C/fHvfsUq2UgA3mEOMAhx7TiMhvUqV8rFZ0HGKliVm7bf42dZf+HuvXb7L2fnHKJmYyjGVGsVr2Zp9FPHgxRvz8dmzrOenZ3OJa0TEyZ1QBtLjgBxV3JJZnNGlKcnGOdu7nfZYubO0Z1Wz91rneMAKMT3Itqaa6VRdib9i3kg2VG/zNczxIhMfUX+ni9k12pr0ItdjNO7JBDxILTIzIz7EjPEUrUHStdp34GVGiXGAOO4AbyTkFLaW0pTpyqO0fnM3FmZtqtng1xHfAVcT4G6oQ3zXYm/EeSjY9pHaPAhMfUW+mT2TXivNGlCzxe1m3gS0AuA4TjsVXK5rSoqLbcldXVr27Shsh6zP6rPipxmT0d8V3oVqeqNZsjCA4GRM7OZRPMmpBYFmrrruXs4Fx2sLzoAEgZEGTPLxUS6SLUlHVSzV3lb1MxZD1mf1WfFWxma0d8V3o7bRTDqIvOaH0gQNdpvNzjA5gk96zi2pZLaddaEZ0Pukrx61mjxXLpPFZVCjIUkBAEAQG1FoMzs4getVbsb0oxle/p6mwpN4/nZ8VW7N1Th8cS4ot4/1KfxVbv5cuqcPjiaNoM4/wBWl8VF38uXVOHxx9zZllp8f6tL4qrlL5c2hRpPb5x9yzadNjnYy0NGF4S4mDdBHHONkqLyaRooUqcpZ3Vl29XuXsNrc4vBdq9HU1Rg0apyCiUErF6GkTqOSbys8txTQrvpRyf7Dkq9Az0J/mRrY7becG1DIkXXE4sM4Y9XeFWVPK6OihpV6iVR79vAxt3miDgH1AOWr8Vant7iumNKCs98vQ3s1jqVKGoxzvpDN1pOTRExzKrKSjPMU6cp0LR4+h0WOx1KdOt0lN7QaeBLHATfYRjHAqs5RlJWNaNKdOnLEtx5lhOsfQqH9DltNZdxxaNL7m+qXkzo0Tj0o/4n+EEeICrU3czTRZXxcmU0MJq8m1D2im4j1KavRKaI/wAveU0eJNQf8T/CD6wFM93MpQzc1/xZTSFmDdZuWqHDqktB7j8QphJvaV0qjGLxQ2ZX6na/c93cLMwVWdF9tsuZxnzmczEjjhtSTwvFu3lacVVhq96zXqvbrLU2S0R5xouA/q3R4GEbs+30NIRcoq23A1/nYwttS7NJuDGGD95wwLj25bgrwV/uZzV5YXqo7F4ve36cEXfVNGGMwqQC932hIm407ABExmeShLFm9hMpOjaMcpb3vz3Lhbf1lrLpR4MPPSMObXkuB5E4tPEKJUk9mTL0tLnF2nmuvM6tOUmhlE0zNN18tnMCQbruIJcOOe1Z0W7tPab6bCKpwcdmfocFXVptaPt67uOJa0chBPatVnJs55/ZSjBb8332XdbxOk1DTpMLMC+9ecM5Bi6Dswg8ZVLYpO5vjlSoxcN97v0Mqdpv6tTGcnxrNO8n7Q4FS426JSNfWPDV796911HWylSdec443j/qBojAzi0zjPcs7yVkjrwUJOUm9/GxR9Cl/ldvyKycviMpwoLZ/wBl7GLqVP8Ayu35Fe7+I53Gn8kvYzdTZv8A3W/KpuyuGn8kvYoWN/yoPlTMraHyS9jN7W7/ANQPuUq5SShbb4/wcxWhyMgqSrIQgIAgCAlCbkyoJuSChNyQVBa5IchdSLXlFicTO7RRxf8Ah1PYKyqbuZ3aG85f2vyL6FP0o5P9hyir0GX0J/mRwuOK0SOOUszoqH6NnpP9TFRdJ9h0zl+CPOX+p02ercpX4kl5GJd1QdhCpKOKVjoo1tXQxWvnbfwOiyv6ZlWQBcp3hBd12t2k9ZVlHA0awra6Ek0tnX7nBo/znfh1f7blrPYua8zh0d/c+UvJnRoY/W/g1PUq1d3NGmivOXJ+RGgz9L/JV/tPSr0Roj/J3mejM6n4VT1Kam7miujPOf8AaybRWu1TIlrmsDhvFxviMwd4UxV4irUwVnfNNJNdVl8XWc9opGm4QcMHMcMJGwjcfUQrReJGFSDpTyeW1P58ud1G0io8GINwXt141mkkc5ntKylHDHt9Duo1lVqJ2s1HPnjTv2nHbWTaHN31SO98LWL+zsOCrG9dri/UxtzpqPO97vaKtDoozryvVk+t+ZehSYWFxLrzcSABlMSJ5hVk5J2NqVOjKm5SbutqVtmy6v4npWFlmeLjnVhdDnfZuiBJPcB4LKeNZ5HVRVCosDbsrvPdxOS2sa4B1OS2nq4jWuyS1xA5x2K8G1lLeZV4xqRUqeyOT423Plmc9C0uZgDgcwQC08wcFZxTMKdadPJbOG7uNDUpuzbcO9uI7Wn3FRaSNcdKe1YXxWzu9mYVmFpjuIyI3hWTuYVYuDt8ZkXK1jLEQSpKuREoVuQSpIbIlCLkIVIUkBAEAQBAEBKAITcKCbkyhNywKgsmd+ijrO/DqewVlU2Lmd2hv7pf2vyLaGP0o5P9hyit0GW0F/nRwuK1RySeZu930bfSf6mKiX3Ps9Tecvwx5y/1NXO+gH4p9gKLff2F3L/63/69Dq0G7UtH4B/uU1SttjzNdCf2z5HHYXazvw6v9ty0nsXNeZhQf3S/tl5M6dCnGr+DU9SpV3c0a6I85cn5EaCP0v8AJV/tPSt0Rob/AC9/kZaOdjU/CqepWmtnNFNHlZz/ALWZ6RP0h5M/ttU0+j84lNKf5X2f9UbWJ4qN6BxgzNMn7Luqfuu8DB3qs1heJdppRkqkdVLsfB/yVsAuPfewutxnZFRkylTOKt8yZOi/jqSxbln/AOUTPSJIrPO0PcR+aR7laGcUYaReNaT4MppJsVXRk43hydrD1qafRRXSVarK2x5rk8yLJlU/DPtNSe7mTo+yf9r80a6P/wBT8J3rCie7maaN/X/aytSm6mWmcS0OBBO3ZzRNSQnCpQlF32pNNdfzMsLQ13nsHpN1T2jI9yjC1sZZVoT/AFI9qyfs+4i1WW6GvBlj5gxBwzBGwiR3qYzvkytehgSlF3T+ZmZMs5Ow7Rj6lP8AUUbvSz3PzOcq5y3KkqStxKEXIQgKRchCAgCAIAgCAIAgCAICUJAKgm536O1b7zg3o3idhLhdAHHFZ1M7I7tFvFSm9ln45DRVUNqtJIAMjleBb71FSN4saHUUa0WzlqtIMEQeIWizOaopRk1LIvUMMaNsuPYboHqKqlmzSbtSin1vy9jYGaEDNtSTyLYnwUWtPsNFLFo1lul4WL6PrXGVjsdTu9pe0x4HuUTjdoto1TBTqSfC3a2jCxul0bXNeBzLCArTWXcZ6NK88PFSXa07G+jKt3pScuicO0wAOeKrUV7czTRpYVNvdF9+xIaHqgVRjmHt7XMLR4lKq+0aFNKslxy7yljw6QnACm4Gd5gAc8VMs7cytG6U28rRa7XZWI0h597Y5rCDv1Gg+II7EhssNKzqYtzSa7kc7eGaszBN3yPYtRvPcP8AUfZheG2+LrjP3i1s8ysI5LquelVzqNf1OGzffJ99kcEiqACQKrRAkwHgYAScnDLHMQtei+o5Lqskr2mss963dq8eZdzJaKdWWPZg1zmmCJm67aMTgeKi+d45kuN4qFX7Wtjaezg/RhtIMa7Xa5zxdAab0awJJOQyiOKN3aLRgqcJZptq2We9N37idG0XOLmgG86m4Ab41oHYCoqSVlzLaLTk3JW2xZNZ4wa7K60ztaYg8xhlwURW9GtWayhU2WXY7W9M0QyxA/6lON5cR4RKlz6mZx0ZN3xxtz9Np12qHtp2eiC+7eJIadZzomBnADR4rOP2tykdFVaxRpU87Hn25gZFOQSJLiDIk7AdsD3raDvmcWkpU0qad7Zvn/BxkrQ4rkIVCkghAEAQBAEAQBAEAQBAEAQBAEBqy0OGAcRGXBVcUzaNepFWTLm2PP2z3qMEeBb6mr+4yqVCczMKySWwynUlPpO5cWp/WKjBE0Wk1f3Ght9SCL2BEHAfBRq48C31da1sRRlreBdDiGiTGzFS4Ju7RWGk1YRwxlkT5bU6xUauPAv9ZW/cWZb6gmHnEycjJ34o6cXuC0usr2k83d8yx0lV657h8FGrjwJ+tr/uKi31Mdc4mTxMRPcE1ceBK02vn97zzfMrWtb3gBziQJIG6c1KglsRSppNSokpyvYzp1C0hwMEGQdxUtXM4zcXdHQdI1TjfMquqhwN/rtIvfGzmc+SSczmr2Odycndm9G21GiG1HAbrxjuVXCL2o1hpNWCtGT7zop6ZrjKofBU1MOBstPrr+o1/wD0Fo/3T4KNRDgX/wDkK/E5DbqkzfM88+e9XwR4GT0ur+5kttztzDzps+CjAiy0uW9LuRZ+k6kFodDTmGgNB5hsSoVKJMtOqNWTsurI43OWljjlK5VSUIUkBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBASgCE3CC4QXCgXCC4lBcILiUFxKC4Ui5CEBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAf/Z" class="d-block w-100" alt="Stranger Things 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://peliomanta.com/wp-content/uploads/2019/07/Peli-o-Manta.-Resumen-Stranger-Things-2.-Logo-1024x576.jpg" class="d-block w-100" alt="Stranger Things 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnH8f8NxilHtyzjh409-xK7OtJDlqvwY7Y3Q&s" class="d-block w-100" alt="Stranger Things 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#stCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#stCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Texto en 2 columnas -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          Stranger Things es una serie de ciencia ficción y terror ambientada en los años 80. 
+          La historia comienza con la misteriosa desaparición de un niño en el pueblo de Hawkins, Indiana, 
+          lo que desencadena la aparición de una niña con poderes psíquicos conocida como Eleven.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p>
+          A lo largo de las temporadas, los personajes enfrentan criaturas del "Upside Down", 
+          un mundo paralelo lleno de monstruos aterradores. 
+          Con una estética retro y referencias a la cultura pop de los 80, 
+          la serie se ha convertido en un fenómeno mundial.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion -->
+  <div class="container mb-5">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            Personajes Principales
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            Eleven, Mike, Dustin, Lucas, Will y Max son los protagonistas principales de la historia.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            El Mundo del Upside Down
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            El Upside Down es una dimensión paralela donde habitan criaturas como el Demogorgon y el Mind Flayer.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
