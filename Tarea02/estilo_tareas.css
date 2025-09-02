@@ -1,0 +1,39 @@
+/* estilos.css */
+
+body {
+  background-color: #2fd26b; /* color de fondo */
+  color: #333333; /* color de texto */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.imagen-escalada {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.imagen-escalada:hover {
+  transform: scale(1.4);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+a {
+  color: #cc0000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
