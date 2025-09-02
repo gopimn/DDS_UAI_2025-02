@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de Zapatos — Demo Básica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Principal">
+      <div class="brand">ZapaStore</div>
+      <div class="badge">Demo básica HTML + CSS + JS</div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- === Carousel === -->
+    <section aria-label="Novedades">
+      <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Promociones">
+        <div class="slides" id="slides">
+          <div class="slide" aria-roledescription="slide" aria-label="1 de 3">
+            <img src="https://sparta.cl/media/catalog/product/z/a/zapatillas-running-hombre-new-balance-gel-nimbus-25-celeste-exterior.png?optimize=high&bg-color=255,255,255&fit=bounds&height=550&width=600&canvas=600:550" alt="Zapatillas deportivas sobre fondo neutro" />
+            <div class="caption">Colección Running</div>
+          </div>
+          <div class="slide" aria-roledescription="slide" aria-label="2 de 3">
+            <img src="https://www.clarin.com/2023/12/17/Pusppz3F4_2000x1500__1.jpg" alt="Zapatos de cuero exhibidos en vitrina" />
+            <div class="caption">Clásicos de Cuero</div>
+          </div>
+          <div class="slide" aria-roledescription="slide" aria-label="3 de 3">
+            <img src="https://a.storyblok.com/f/178900/960x672/abe5e09ac4/hunter-x-hunter-x-reebok-main.jpeg/m/filters:quality(95)format(webp)" alt="Zapatillas urbanas en calle" />
+            <div class="caption">Street Style</div>
+          </div>
+        </div>
+        <div class="controls" aria-hidden="false">
+          <button class="btn" id="prev" aria-label="Anterior">‹</button>
+          <button class="btn" id="next" aria-label="Siguiente">›</button>
+        </div>
+        <div class="dots" aria-hidden="false">
+          <button class="dot" data-index="0" aria-label="Ir a la imagen 1"></button>
+          <button class="dot" data-index="1" aria-label="Ir a la imagen 2"></button>
+          <button class="dot" data-index="2" aria-label="Ir a la imagen 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Dos columnas responsivas === -->
+    <section class="cols" aria-label="Información">
+      <article class="card">
+        <h3>Nuestra propuesta</h3>
+        <p>
+          En ZapaStore combinamos confort y estilo. Seleccionamos modelos de running, urbano y vestir,
+          con materiales respirables y suelas livianas para que cada paso se sienta mejor.
+        </p>
+        <p class="muted">En escritorio verás <strong>dos columnas</strong>. En móviles, se apilan en <strong>una sola columna</strong>.</p>
+      </article>
+      <article class="card">
+        <h3>Beneficios</h3>
+        <ul>
+          <li>Despacho a todo el país</li>
+          <li>Cambios en 30 días</li>
+          <li>Garantía de fábrica</li>
+          <li>Descuentos para estudiantes</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- === Accordion (2 colapsables) === -->
+    <section class="accordion" aria-label="Preguntas frecuentes">
+      <h2 style="margin:0 0 8px;">Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Cómo elijo mi talla?</summary>
+        <p>
+          Recomendamos medir tu pie en centímetros y comparar con la tabla del fabricante. Si estás entre tallas,
+          elige la más grande para modelos de running, y la más justa para vestir.
+        </p>
+      </details>
+      <details>
+        <summary>¿Cuáles son los tiempos de envío?</summary>
+        <p>
+          Región Metropolitana: 24–72 horas hábiles. Regiones: 2–6 días hábiles según zona y operador logístico.
+        </p>
+      </details>
+    </section>
+
+    <footer>
+      © <span id="year"></span> ZapaStore — Demo para clase/responsive
+    </footer>
+  </main>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Carousel básico
+    (function(){
+      const slides = document.getElementById('slides');
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      const total = dots.length;
+      let index = 0;
+      let timer;
+
+      function go(i){
+        index = (i + total) % total;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, k) => d.classList.toggle('active', k === index));
+        restart();
+      }
+      function restart(){
+        clearInterval(timer);
+        timer = setInterval(() => go(index + 1), 4000);
+      }
+
+      prev.addEventListener('click', () => go(index - 1));
+      next.addEventListener('click', () => go(index + 1));
+      dots.forEach(d => d.addEventListener('click', (e) => go(parseInt(e.currentTarget.dataset.index, 10))));
+
+      // inicio
+      go(0);
+    })();
+  </script>
+</body>
+</html>
