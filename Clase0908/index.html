@@ -18,9 +18,6 @@
             <div class="col-sm">
             Column
             </div>
-            <!-- <div class="col-sm">
-            Column
-            </div> -->
         </div>
         <div class="row">
             <div class="col-sm">
@@ -34,16 +31,16 @@
             </div>
         </div>
     </div>
-
     <script>
-      console.log("This is sparta!!!");
-      console.log("This is Thebas!!!");
-      while (true)
-      {
-        console.log("This is Lesbos!!!");
-        delay(1000);
-      }
-      console.log("This is Athenas!!!");
+        console.log("This is sparta!!!");
+        console.log("This is Thebas!!!");
+        console.log("Starting countdown...");
+
+        setTimeout(function() {
+        console.log("1 second has passed!");
+        }, 1000); // 1000 milliseconds = 1 second
+
+        console.log("This will log immediately, as setTimeout is asynchronous.");
     </script>
 </body>
 </html>
