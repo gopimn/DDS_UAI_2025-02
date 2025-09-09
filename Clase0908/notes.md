@@ -220,6 +220,7 @@ https://www.w3schools.com/react/react_getstarted.asp
 
 - Use un placeholder para mostrar al usuario que formato debe ingresar
 - Usando javascript deben calcular el digito verificador
+- Hagan un PR a su rama, no a main.
 
 ### refs
 
