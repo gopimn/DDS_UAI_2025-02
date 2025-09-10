@@ -1,0 +1,96 @@
+
+body {
+    background-color: #d0d0d0; 
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+
+.centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.color001 {
+    background-color: #2c2f36; 
+    padding: 30px;
+}
+
+.cuadra {
+    border: 1px solid #2b2e35; 
+    
+}
+
+
+.input-dark {
+    background-color: #515966; 
+    border: none;
+    color: #fff;
+}
+.input-dark::placeholder {
+    color: #b0b0b0;
+}
+.input-dark:focus {
+    background-color: #525a67;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,200,83,0.25);
+}
+
+
+.btn-green {
+    background-color: #00c853; 
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.btn-green:hover {
+    background-color: #00e676; 
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
+
+h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;              /* largo de la rayita */
+    height: 3px;              /* grosor */
+    background-color: #00c853; /* verde */
+    border-radius: 2px;
+}
+.btn-white {
+    background-color: #fff;
+    border: none;
+    color: #2c2f36;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.btn-white:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
+
+.link-pass {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+.link-pass a {
+    color: #00c853;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link-pass a:hover {
+    text-decoration: underline;
+}
