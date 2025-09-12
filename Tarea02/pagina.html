@@ -178,14 +178,14 @@
 
     <div class="content-container images-container">
         <h2>Canchas de Golf</h2>
-        <img src="https://cncs.cl/wp-content/uploads/2024/04/golf9.png" alt="Golf grande" class="img-large">
-        <img src="https://cncs.cl/wp-content/uploads/2024/04/golf9.png" alt="Golf pequeño" class="img-small" id="imgPequena">
+    <img src="https://cncs.cl/wp-content/uploads/2024/04/golf9.png" alt="Golf grande" class="img-large">
+    <img src="https://cncs.cl/wp-content/uploads/2024/04/golf9.png" alt="Golf pequeño" class="img-small">
     </div>
 
     <div class="content-container">
         <h2>Navegar por más Información</h2>
         <div style="text-align: center;">
-            <button class="boton" id="chileGolfBtn">🏌️ Ir a Chile Golf</button>
+            <a href="https://www.chilegolf.cl" class="boton" target="_blank" rel="noopener">🏌️ Ir a Chile Golf</a>
             <br><br>
             <a href="https://www.usopen.com/" target="_blank">📱 Página oficial US Open Golf</a>
         </div>
@@ -208,98 +208,7 @@
         </form>
     </div>
 
-    <script>
-        // Redirigir a Chile Golf
-        document.getElementById('chileGolfBtn').onclick = function() {
-            window.open('https://www.chilegolf.cl', '_blank');
-        };
-
-        // Mostrar mensaje al hacer clic en la imagen pequeña
-        document.getElementById('imgPequena').onclick = function() {
-            alert('¡Hiciste clic en la imagen pequeña!');
-        };
-
-        // Manejar envío de la encuesta
-        document.getElementById('encuestaGolf').onsubmit = function(e) {
-            e.preventDefault();
-            alert('¡Gracias por participar en la encuesta!');
-        };
-
-        // Inicializar el carrusel con opciones personalizadas
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar carousel
-            const carouselElement = document.querySelector('#carouselExampleCaptions');
-            if (carouselElement) {
-                const carousel = new bootstrap.Carousel(carouselElement, {
-                    interval: 4000,
-                    wrap: true,
-                    pause: 'hover'
-                });
-            }
-            
-            // Efectos de entrada suaves
-            const container = document.querySelector('.carousel-container');
-            if (container) {
-                container.style.opacity = '0';
-                container.style.transform = 'translateY(30px)';
-                
-                setTimeout(() => {
-                    container.style.transition = 'all 0.8s ease';
-                    container.style.opacity = '1';
-                    container.style.transform = 'translateY(0)';
-                }, 100);
-            }
-
-            const accordionContainer = document.querySelector('.accordion-container');
-            if (accordionContainer) {
-                accordionContainer.style.opacity = '0';
-                accordionContainer.style.transform = 'translateY(30px)';
-                
-                setTimeout(() => {
-                    accordionContainer.style.transition = 'all 0.8s ease';
-                    accordionContainer.style.opacity = '1';
-                    accordionContainer.style.transform = 'translateY(0)';
-                }, 300);
-            }
-
-            // Mejorar la experiencia del accordion
-            const accordionItems = document.querySelectorAll('.accordion-item');
-            accordionItems.forEach(item => {
-                const button = item.querySelector('.accordion-button');
-                if (button) {
-                    button.addEventListener('click', function() {
-                        button.style.transform = 'scale(0.98)';
-                        setTimeout(() => {
-                            button.style.transform = '';
-                        }, 150);
-                    });
-                }
-            });
-        });
-
-        // Mejorar la experiencia táctil en dispositivos móviles
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        document.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        document.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            if (touchEndX < touchStartX - swipeThreshold) {
-                carousel.next();
-            }
-            if (touchEndX > touchStartX + swipeThreshold) {
-                carousel.prev();
-            }
-        }
-    </script>
+    
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>

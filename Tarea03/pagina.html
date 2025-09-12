@@ -1,0 +1,249 @@
+<!-- archivo: tarea.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarea HTML - Golf</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <div class="content-container">
+        <h1>Soy Martin Gonzalez</h1>
+        <h2>Esta es la primera tarea HTML</h2>
+        <h2>de DDS UAI CLASS</h2>
+    </div>
+    
+    <div class="content-container">
+        <h1>Golf: El Deporte de Precisión</h1>
+        <p>El golf es un deporte que combina técnica, concentración y estrategia. Se juega en campos al aire libre y el objetivo es introducir la bola en el hoyo con el menor número de golpes posible.</p>
+
+        <h2>Historia del Golf</h2>
+        <p>El golf tiene sus orígenes en Escocia en el siglo XV. Desde entonces, ha evolucionado hasta convertirse en uno de los deportes más populares del mundo.</p>
+
+        <h2>Reglas Básicas del Golf</h2>
+        <p>Las reglas del golf son simples: cada jugador golpea la bola desde el tee hasta el hoyo, contando cada golpe. Gana quien complete el recorrido con menos golpes.</p>
+
+        <h2>Equipamiento Esencial</h2>
+        <p>Para jugar al golf se necesita un set de palos, pelotas, tees y, por supuesto, un campo de golf. Los palos se dividen en maderas, hierros y putters.</p>
+
+        <h2>Campos Famosos en el Mundo</h2>
+        <p>Algunos de los campos más reconocidos son St Andrews en Escocia, Augusta National en Estados Unidos y Pebble Beach en California.</p>
+
+        <h2>Grandes Torneos de Golf</h2>
+        <p>Entre los torneos más importantes destacan el Masters, el US Open, el British Open y el PGA Championship.</p>
+
+        <h2>Jugadores Legendarios</h2>
+        <ul>
+            <li>Tiger Woods</li>
+            <li>Jack Nicklaus</li>
+            <li>Arnold Palmer</li>
+            <li>Gary Player</li>
+            <li>Seve Ballesteros</li>
+            <li>Phil Mickelson</li>
+            <li>Rory McIlroy</li>
+        </ul>
+
+        <h2>Video: Hole in One</h2>
+        <iframe width="400" height="225" src="https://www.youtube.com/embed/8nEbNJZ37zs?start=538" 
+            title="Hole in One" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- CAROUSEL DE IMÁGENES -->
+    <h2>🏌️ Galería de Campos de Golf</h2>
+    
+    <div class="carousel-container">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cncs.cl/wp-content/uploads/2024/04/golf9.png" class="d-block w-100" alt="Campo de Golf CNCS">
+                    <div class="carousel-caption">
+                        <h5>🏌️ Club de Golf CNCS</h5>
+                        <p>Uno de los campos más prestigiosos de Viña del Mar, con vistas espectaculares al océano</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="https://bunny-wp-pullzone-cjamrcljf0.b-cdn.net/wp-content/uploads/2021/02/augusta-national-golf-club_001.jpg  " class="d-block w-100" alt="Augusta National">
+                    <div class="carousel-caption">
+                        <h5>🏆 Augusta National</h5>
+                        <p>Considerado por muchos el mejor campo del mundo, sede del Masters Tournament</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=1200&h=600&fit=crop&crop=center" class="d-block w-100" alt="Jugador en acción">
+                    <div class="carousel-caption">
+                        <h5>⛳ Momento Perfecto</h5>
+                        <p>La precisión y elegancia del golf capturadas en el momento ideal del swing</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <video class="d-block w-100" controls style="height: 400px; object-fit: cover;">
+                        <source src="D:/Downloads/IMG_2075.MP4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="carousel-caption">
+                        <h5>🎬 Jugador en Acción</h5>
+                        <p>Video exclusivo mostrando una salida</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- TEXTO EN DOS COLUMNAS -->
+    <h2>Técnicas y Estrategias del Golf</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="column">
+                    <h4>Técnica del Swing</h4>
+                    <p>El swing es el movimiento fundamental del golf. Una técnica correcta incluye la postura adecuada, el grip del palo, el backswing controlado y el follow-through. La práctica constante y la concentración son clave para perfeccionar este movimiento. Muchos profesionales dedican años a perfeccionar su swing, ya que pequeños ajustes pueden marcar grandes diferencias en el juego.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="column">
+                    <h4>Estrategia de Juego</h4>
+                    <p>La estrategia en el golf va más allá de la técnica. Incluye la selección del palo correcto, la lectura del viento y las condiciones del campo, y la planificación de cada tiro. Un buen golfista analiza cada hoyo antes de jugar, considerando los obstáculos, la posición del pin y las mejores rutas para minimizar los riesgos y maximizar las oportunidades de hacer un buen score.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACORDEÓN -->
+    <h2>Información Detallada sobre Golf</h2>
+    
+    <div class="accordion-container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        🏌️ Equipamiento Profesional
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Palos de Golf:</strong> Un set completo incluye drivers, maderas, hierros (3-9), wedges y putters. Cada palo tiene un propósito específico según la distancia y el tipo de tiro requerido. Los drivers son para tiros largos desde el tee, los hierros para tiros de aproximación, y los putters para el green.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        🏆 Torneos y Competencias
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Los Majors:</strong> Los cuatro torneos más prestigiosos son el Masters Tournament, PGA Championship, U.S. Open y The Open Championship (British Open). Estos eventos atraen a los mejores golfistas del mundo y ofrecen los premios más importantes del deporte.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        📏 Reglas y Técnicas
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Técnica del Swing:</strong> El swing perfecto requiere coordinación entre postura, grip, backswing y follow-through. La práctica constante y la concentración son fundamentales. Un buen swing debe ser fluido y controlado, manteniendo el equilibrio durante todo el movimiento.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container images-container">
+        <h2>Canchas de Golf</h2>
+    <img src="https://cncs.cl/wp-content/uploads/2024/04/golf9.png" alt="Golf grande" class="img-large">
+    <img src="https://cncs.cl/wp-content/uploads/2024/04/golf9.png" alt="Golf pequeño" class="img-small">
+    </div>
+
+    <div class="content-container">
+        <h2>Navegar por más Información</h2>
+        <div style="text-align: center;">
+            <a href="https://www.chilegolf.cl" class="boton" target="_blank" rel="noopener">🏌️ Ir a Chile Golf</a>
+            <br><br>
+            <a href="https://www.usopen.com/" target="_blank">📱 Página oficial US Open Golf</a>
+        </div>
+    </div>
+
+
+    <div class="content-container">
+        <h2>Valida tu RUT Chileno</h2>
+        <form id="rutForm" autocomplete="off">
+            <label for="rutInput">RUT (sin dígito verificador):</label><br>
+            <input type="text" id="rutInput" name="rutInput" pattern="^\d{1,2}\.\d{3}\.\d{3}$" placeholder="Ej: 12.345.678" required>
+            <button type="submit" class="boton">Calcular Dígito Verificador</button>
+        </form>
+        <div id="dvResult" style="margin-top:15px;font-size:1.2em;"></div>
+    </div>
+
+    <div class="content-container">
+        <h2>Encuesta sobre Golf</h2>
+        <form id="encuestaGolf">
+            <p>¿Qué aspectos del golf te interesan más?</p>
+            <label><input type="checkbox" name="interes" value="tecnica"> 🎯 Técnica</label>
+            <label><input type="checkbox" name="interes" value="equipamiento"> 🏌️ Equipamiento</label>
+            <label><input type="checkbox" name="interes" value="historia"> 📚 Historia</label>
+            <label><input type="checkbox" name="interes" value="jugadores"> ⭐ Jugadores</label>
+            
+            <p>¿Has jugado golf alguna vez?</p>
+            <label><input type="radio" name="jugado" value="si"> ✅ Sí</label>
+            <label><input type="radio" name="jugado" value="no"> ❌ No</label>
+            
+            <button type="submit" class="boton">📝 Enviar Respuestas</button>
+        </form>
+    </div>
+
+    
+
+    <!-- Bootstrap JS -->
+    <script>
+    // Calcular dígito verificador RUT
+    document.addEventListener('DOMContentLoaded', function() {
+        const rutForm = document.getElementById('rutForm');
+        const rutInput = document.getElementById('rutInput');
+        const dvResult = document.getElementById('dvResult');
+        if (rutForm) {
+            rutForm.onsubmit = function(e) {
+                e.preventDefault();
+                let rut = rutInput.value.replace(/\./g, '');
+                let suma = 0, multiplo = 2;
+                for (let i = rut.length - 1; i >= 0; i--) {
+                    suma += parseInt(rut.charAt(i)) * multiplo;
+                    multiplo = multiplo === 7 ? 2 : multiplo + 1;
+                }
+                let dv = 11 - (suma % 11);
+                let dvStr = dv === 11 ? '0' : dv === 10 ? 'K' : dv.toString();
+                dvResult.textContent = `El dígito verificador para ${rutInput.value} es: ${dvStr}`;
+            };
+        }
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
