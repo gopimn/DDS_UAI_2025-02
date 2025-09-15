@@ -1,0 +1,145 @@
+body {
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  background: #ffe5ec;  
+
+}
+
+.encabezado { 
+    background: #ff87ab; 
+}
+
+
+.encabezado__logo img { height: 28px; }
+
+
+.encabezado__contenedor {
+  max-width: 1000px;
+  padding: 10px 12px;
+  display: flex;                 /* <- clave */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;                 /* <- clave */
+  gap: 10px;
+}
+
+a.menu__enlace{
+  display:inline-block;
+  padding:10px 30px;
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  border:2px solid whitesmoke; 
+  cursor: pointer; 
+}
+
+button.menu__enlace--boton{
+  display:inline-block;
+  padding:10px 30px;
+  border-radius:30px;
+  color:#fff;
+  background:#faa4bd;             
+  border:2px solid #faa4bd;        
+}
+
+a.menu__enlace:hover,
+button.menu__enlace--boton:hover{
+  background:#fff;
+  color:#f564a9;
+  border:2px solid whitesmoke  
+}
+
+.hero__contenedor {
+  text-align: center
+}
+
+
+.hero__titulo{
+  display: inline-block;             
+  margin: 16px 0;
+  padding: .15em 0;                         /* aire arriba/abajo */
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1.1;  
+
+  background: linear-gradient(50deg, #ce1d5e, #da3783, #6a00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.rutina {
+  text-align: center
+}
+
+.btn-form {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 30px;
+  background: linear-gradient(50deg, #ce1d5e, #da3783, #6a00ff);
+  color: white;
+  cursor: pointer;
+}
+
+.formulario {
+  padding: 50px 55px;
+  text-align: center
+
+
+
+}
+
+.grupo__titulo {
+  color:#bf3f6e; 
+  font-weight: 700;
+  margin-bottom: 15px;
+
+}
+
+.sub_opciones {
+  color:#aa4465
+}
+
+.label_personal {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px;
+}
+
+input, textarea {
+  padding: 17px 25px;
+  border-radius: 25px;
+  margin-bottom: 20px;  /* margin-bottom es para separacion hacia abajo */
+  background-color: #EDFFF0;
+  border: 2px solid #F0FAF1;
+  outline: none; /* contorno que s epone cuando se presiona */
+
+}
+
+/*Doble “::” → pseudoelementos */
+input::placeholder, textarea::placeholder {
+  color: #b5cab6;
+
+}
+
+.btn-form_send {
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 12px 17px;
+  color: white;
+  border: 0;
+  border-radius: 25px;
+  background-color: #ae4276;
+  box-shadow: 0 0 20px rgba(25, 254, 0, 0, 4);
+  cursor: pointer; /* para que se vea la mano cada vez que se pone el mouse encima */
+
+
+}

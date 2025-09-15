@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rutina Personalizada - Blog 101</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,800;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/rutina-personalizada.css" />
+    <link
+      rel="icon"
+      href="../assets/img/logo.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <meta name="theme-color" content="#f564a9" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <div class="encabezado__contenedor">
+        <a class="encabezado__logo" href="#inicio"
+          ><img src="../assets/img/logo.png" alt="logo de Blog 101"
+        /></a>
+
+        <nav class="menu">
+          <ul class="menu__lista">
+            <li class="menu__item">
+              <a class="menu__enlace" href="../index.html">Home</a>
+            </li>
+            <li class="menu__item">
+              <button class="menu__enlace menu__enlace--boton" type="button">
+                Recomendaciones
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="principal">
+      <seccion class="hero">
+        <div class="hero__contenedor">
+          <h1 class="hero__titulo">Rutina Personalizada</h1>
+          <p>
+            Descubre tu rutina ideal con Blog 101. En esta guía express
+            responderás preguntas sobre tu piel, objetivos y presupuesto; al
+            final te enviaremos por Gmail un plan simple paso a paso con los
+            ingredientes que mejor te van y cómo usarlos.
+          </p>
+        </div>
+      </seccion>
+
+      <details class="rutina">
+        <summary class="btn-form">Crea tu Rutina</summary>
+        <div class="formulario">
+          <h2>Empecemos a crear tu rutina</h2>
+          <p>Primero necesitamos informacion sobre ti</p>
+          <form>
+            <p>
+              <label class="label_personal" for="name">Nombre</label>
+              <input
+                type="text"
+                name="nombre"
+                id="name"
+                placeholder="Florencia"
+                autocomplete="given-name"
+                required
+              />
+            </p>
+
+            <p>
+              <label class="label_personal" for="apellido">Apellido</label>
+              <input
+                type="text"
+                name="apellido"
+                id="apellido"
+                placeholder="Yañez"
+                autocomplete="family-name"
+                required
+              />
+            </p>
+
+            <p>
+              <!--Tarea3 placeholder y pattern-->
+              <label class="label_personal" for="rut">Rut</label>
+              <input
+                type="text"
+                name="rut"
+                id="rut"
+                placeholder="12.345.678-5"
+                pattern="^\d{1,2}\.?\d{3}\.?\d{3}-[\dkK]$"
+                title="Formato válido: 12.345.678-5 o 12345678-K"
+                required
+              />
+            </p>
+
+            <p>
+              <label class="label_personal" for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="tunombre@dominio.cl"
+                autocomplete="email"
+                required
+              />
+            </p>
+
+            <p>
+              <label class="label_personal" for="fecha">Fecha de nacimiento</label>
+              <input type="date" required />
+            </p>
+
+            <div clas="options">
+              Remember me
+              <input type="checkbox" name="rememberme" id="rememberme" />
+            </div>
+
+            <h2>Vamos con las preguntas</h2>
+            <!-- ========== BLOQUE 1 — Piel y objetivos ========== -->
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Tipo de piel</legend>
+              <p>Elige la que mejor te represente hoy.</p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="tipo_piel"
+                    value="normal"
+                    required
+                  />
+                  Normal</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="tipo_piel" value="seca" />
+                  Seca</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="tipo_piel" value="mixta" />
+                  Mixta</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="tipo_piel" value="grasa" />
+                  Grasa</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">¿Piel sensible/reactiva?</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="piel_sensible" value="si" />
+                  Sí</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="piel_sensible" value="no" />
+                  No</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="piel_sensible"
+                    value="no_seguro"
+                  />
+                  No estoy segurx</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Objetivos principales</legend>
+              <p>Marca tus prioridades (ideal máx. 3)</p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="controlar_acne"
+                  />
+                  Controlar acné</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="reducir_brillo"
+                  />
+                  Reducir brillo</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="hidratar_barrera"
+                  />
+                  Hidratar / reparar barrera</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="disminuir_manchas"
+                  />
+                  Disminuir manchas (PIH/melasma)</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="calmar_rojez"
+                  />
+                  Calmar rojez / rosácea</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="suavizar_textura"
+                  />
+                  Suavizar textura / poros</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="anti_edad"
+                  />
+                  Anti-edad (líneas / elasticidad)</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="objetivos[]"
+                    value="aumentar_luminosidad"
+                  />
+                  Aumentar luminosidad</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Zonas con más problemas</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="checkbox" name="zonas[]" value="frente" />
+                  Frente</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="zonas[]" value="nariz" />
+                  Nariz</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="zonas[]" value="mejillas" />
+                  Mejillas</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="zonas[]" value="menton" />
+                  Mentón</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="zonas[]" value="contorno" />
+                  Contorno</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="zonas[]"
+                    value="espalda_pecho"
+                  />
+                  Espalda/pecho</label
+                >
+              </div>
+            </fieldset>
+
+            <!-- ========== BLOQUE 2 — Antecedentes y tolerancias ========== -->
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">
+                Antecedentes cutáneos (diagnosticados o sospecha)
+              </legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="acne_inflamatorio"
+                  />
+                  Acné inflamatorio</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="acne_comedonal"
+                  />
+                  Comedonal</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="rosacea"
+                  />
+                  Rosácea</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="dermatitis_seborreica"
+                  />
+                  Dermatitis seborreica</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="dermatitis_atopica"
+                  />
+                  Dermatitis atópica / piel muy seca</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="hiperpigmentacion"
+                  />
+                  Hiperpigmentación (PIH)</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="melasma"
+                  />
+                  Melasma</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="antecedentes[]"
+                    value="ninguno"
+                  />
+                  Ninguno / No sé</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">
+                ¿Has reaccionado mal a alguno de estos?
+              </legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="checkbox" name="reacciones[]" value="retinoides" />
+                  Retinoides</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="reacciones[]" value="aha_bha" />
+                  AHA/BHA (glicólico, salicílico)</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="reacciones[]" value="vitamina_c" />
+                  Vitamina C</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="reacciones[]"
+                    value="perfume_alcohol"
+                  />
+                  Perfume / Alcohol desnaturalizado</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="reacciones[]"
+                    value="filtros_quimicos"
+                  />
+                  Filtros solares químicos</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="reacciones[]" value="ninguno" />
+                  Ninguno / No sé</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">
+                Alergias o ingredientes a evitar
+              </legend>
+              <textarea
+                name="alergias"
+                rows="3"
+                placeholder="(opcional) Ej.: fragancias, lanolina, filtros X…"
+              ></textarea>
+            </fieldset>
+
+            <!-- ========== BLOQUE 3 — Rutina actual y SPF ========== -->
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">¿Qué usas hoy?</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="que_usas[]"
+                    value="limpiador_am"
+                  />
+                  Limpiador AM</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="que_usas[]"
+                    value="limpiador_pm"
+                  />
+                  Limpiador PM</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="que_usas[]"
+                    value="exfoliante_quimico"
+                  />
+                  Exfoliante químico</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="que_usas[]" value="retinoide" />
+                  Retinoide</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="que_usas[]" value="vitamina_c" />
+                  Vitamina C</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="que_usas[]" value="niacinamida" />
+                  Niacinamida</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="que_usas[]"
+                    value="acido_hialuronico"
+                  />
+                  Ácido hialurónico</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="que_usas[]" value="hidratante" />
+                  Hidratante</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="que_usas[]" value="aceite_facial" />
+                  Aceite facial</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="que_usas[]" value="spf_diario" />
+                  Protector solar SPF 30+ a diario</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Protector solar diario</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="spf_diario" value="si" required />
+                  Sí</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="spf_diario" value="a_veces" />
+                  A veces</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="spf_diario" value="no" />
+                  No</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Reaplicación SPF</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="spf_reaplica" value="nunca" />
+                  Nunca</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="spf_reaplica" value="una_vez" />
+                  1 vez al día</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="spf_reaplica" value="dos_o_mas" />
+                  2+ veces al día</label
+                >
+              </div>
+            </fieldset>
+
+            <!-- ========== BLOQUE 4 — Fototipo y entorno ========== -->
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Fototipo (Fitzpatrick)</legend>
+              <select name="fototipo" required>
+                <option value="">Selecciona tu fototipo…</option>
+                <option value="I">
+                  I (siempre se quema, nunca se broncea)
+                </option>
+                <option value="II">II (se quema fácil, broncea leve)</option>
+                <option value="III">
+                  III (a veces se quema, broncea moderado)
+                </option>
+                <option value="IV">
+                  IV (raramente se quema, broncea fácil)
+                </option>
+                <option value="V">
+                  V (casi nunca se quema, bronceado intenso)
+                </option>
+                <option value="VI">VI (nunca se quema, piel muy oscura)</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Entorno principal</legend>
+              <p><strong class="sub_opciones">Clima</strong></p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="clima" value="seco" /> Seco</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="clima" value="humedo" />
+                  Húmedo</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="clima" value="frio" /> Frío</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="clima" value="calido" />
+                  Cálido</label
+                >
+              </div>
+
+              <p><strong class="sub_opciones">Mucho aire acondicionado/calefacción</strong></p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="ac_calef" value="si" /> Sí</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="ac_calef" value="no" /> No</label
+                >
+              </div>
+
+              <p><strong class="sub_opciones">Alta contaminación</strong></p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="contaminacion" value="si" />
+                  Sí</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="contaminacion" value="no" />
+                  No</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Hábitos</legend>
+              <p><strong class="sub_opciones">Horas de sueño</strong></p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="sueno" value="menos_6" />
+                  &lt;6</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="sueno" value="6_7" /> 6–7</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="sueno" value="8_o_mas" />
+                  ≥8</label
+                >
+              </div>
+
+              <p><strong class="sub_opciones">Ejercicio con sudor frecuente</strong></p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="ejercicio" value="si" /> Sí</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="ejercicio" value="no" /> No</label
+                >
+              </div>
+
+              <p><strong class="sub_opciones">Estrés</strong></p>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="estres" value="bajo" />
+                  Bajo</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="estres" value="medio" />
+                  Medio</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="estres" value="alto" />
+                  Alto</label
+                >
+              </div>
+            </fieldset>
+
+            <!-- ========== BLOQUE 5 — Hormonas y tratamientos ========== -->
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">
+                ¿Brotes premenstruales u hormonales?
+              </legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="brotes_hormonales"
+                    value="si"
+                  />
+                  Sí</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="brotes_hormonales" value="no" />
+                  No</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="brotes_hormonales"
+                    value="no_aplica"
+                  />
+                  No aplica</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Embarazo o lactancia</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="embarazo_lactancia"
+                    value="si"
+                  />
+                  Sí</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="embarazo_lactancia" value="no" />
+                  No</label
+                >
+              </div>
+              <p>*Si es “Sí”, luego evitaremos retinoides/altas concentraciones.</p>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Tratamientos médicos actuales</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="tratamientos[]"
+                    value="isotretinoina_oral"
+                  />
+                  Isotretinoína oral</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="tratamientos[]"
+                    value="retinoide_topico"
+                  />
+                  Retinoide tópico</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="tratamientos[]"
+                    value="antibioticos"
+                  />
+                  Antibióticos tópicos/orales</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="checkbox"
+                    name="tratamientos[]"
+                    value="peelings_laser_reciente"
+                  />
+                  Peelings/Láser (últimos 30 días)</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="tratamientos[]" value="ninguno" />
+                  Ninguno</label
+                >
+              </div>
+            </fieldset>
+
+            <!-- ========== BLOQUE 6 — Preferencias y límites ========== -->
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Texturas preferidas</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="checkbox" name="texturas[]" value="gel" />
+                  Gel</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="texturas[]" value="locion" />
+                  Loción</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="texturas[]" value="crema" />
+                  Crema</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="texturas[]" value="balsamo" />
+                  Bálsamo</label
+                >
+                <label class="opcion"
+                  ><input type="checkbox" name="texturas[]" value="aceite" />
+                  Aceite</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Acabado deseado</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input type="radio" name="acabado" value="mate" /> Mate</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="acabado" value="natural" />
+                  Natural</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="acabado" value="glow" /> Glow</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Fragancia</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="fragancia"
+                    value="sin_fragancia"
+                  />
+                  Sin fragancia</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="fragancia" value="suave" />
+                  Suave</label
+                >
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="fragancia"
+                    value="me_da_igual"
+                  />
+                  Me da igual</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Tiempo disponible</legend>
+              <div class="grupo__opciones">
+                <label class="opcion"
+                  ><input
+                    type="radio"
+                    name="tiempo"
+                    value="ultra_simple"
+                    required
+                  />
+                  Ultra-simple (3 pasos)</label
+                >
+                <label class="opcion"
+                  ><input type="radio" name="tiempo" value="completa" />
+                  Completa (5–6 pasos)</label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Presupuesto mensual</legend>
+              <select name="presupuesto">
+                <option value="">Selecciona…</option>
+                <option value="bajo">Bajo</option>
+                <option value="medio">Medio</option>
+                <option value="alto">Alto</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend class="grupo__titulo">Notas extra</legend>
+              <textarea
+                name="notas"
+                rows="3"
+                placeholder="Marcas que te gustan, productos que ya tienes, etc. (opcional)"
+              ></textarea>
+            </fieldset>
+            <button class="btn-form_send" type="submit">Enviar respuestas</button>
+          </form>
+        </div>
+      </details>
+    </main>
+
+    <footer class="copy">
+      © 2025 Martina Vivanco — Hecho con amor para la comunidad skincare.
+    </footer>
+    <script src="../pages/validar-rut.js"></script>
+  </body>
+</html>
