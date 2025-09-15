@@ -47,12 +47,23 @@ function validateRut(rut, verifier) {
     }
     
     if (result == verifier) {
-        return true
-    } else return false
+        return true;
+    } else return false;
 
 }
 
 function validateRutForm(){
+    const rutRaw = document.getElementById("rut").value;
+    let [rut, verifier] = rutToNum(rutRaw);
+
+    if (validateRut(rut, verifier)){
+        alert("Rut Valido!");
+        return true;
+    }
+    else{
+        alert("Rut Invalido!");
+        return false;
+    } 
 
 }
 
