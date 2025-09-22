@@ -58,7 +58,7 @@ curl -H 'Content-Type: application/json' \
       https://example.com/posts
 
 
-      ```
+```
 
 
 ```bash
