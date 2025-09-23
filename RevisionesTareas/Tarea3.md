@@ -10,7 +10,7 @@
 
 
 |github|nota|
-|-|-|-|
+|-|-|
 |[Coaffy](https://github.com/Coaffy)||
 |[yuzei](https://github.com/yuzei)||
 |[Vicenlol09](https://github.com/`Vicenlol09)|7|
