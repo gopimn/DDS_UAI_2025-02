@@ -11,15 +11,15 @@
 
 |github|nota|
 |-|-|-|
-|[Coaffy](https://github.com/Coaffy)|8|
-|[yuzei](https://github.com/yuzei)|6|
-|[Vicenlol09](https://github.com/`Vicenlol09)|7|
-|[mrtivivanco](https://github.com/mrtivivanco)|7|
-|[VicenteZapataT](https://github.com/VicenteZapataT)|7.5|
-|[JoseBernal](https://github.com/jpbernalg2005)|8|
+|[Coaffy](https://github.com/Coaffy)||
+|[yuzei](https://github.com/yuzei)||
+|[Vicenlol09](https://github.com/`Vicenlol09)||
+|[mrtivivanco](https://github.com/mrtivivanco)||
+|[VicenteZapataT](https://github.com/VicenteZapataT)||
+|[JoseBernal](https://github.com/jpbernalg2005)||
 |[jqn1](https://github.com/jqn1)|7|
-|[BenHenriquez](https://github.com/BenHenriquez)|7.5|
-|[pablotf16](https://github.com/pablotf16)|7.5|
-|[Vice-CG](https://github.com/Vice-CG)|8|
-|[LBA-17](https://github.com/LBA-17)|6|
+|[BenHenriquez](https://github.com/BenHenriquez)|7|
+|[pablotf16](https://github.com/pablotf16)||
+|[Vice-CG](https://github.com/Vice-CG)||
+|[LBA-17](https://github.com/LBA-17)||
 
