@@ -14,7 +14,7 @@
 |[Coaffy](https://github.com/Coaffy)||
 |[yuzei](https://github.com/yuzei)||
 |[Vicenlol09](https://github.com/`Vicenlol09)|7|
-|[mrtivivanco](https://github.com/mrtivivanco)||
+|[mrtivivanco](https://github.com/mrtivivanco)|7|
 |[VicenteZapataT](https://github.com/VicenteZapataT)||
 |[JoseBernal](https://github.com/jpbernalg2005)||
 |[jqn1](https://github.com/jqn1)|7|
