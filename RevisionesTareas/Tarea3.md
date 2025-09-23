@@ -13,7 +13,7 @@
 |-|-|-|
 |[Coaffy](https://github.com/Coaffy)||
 |[yuzei](https://github.com/yuzei)||
-|[Vicenlol09](https://github.com/`Vicenlol09)||
+|[Vicenlol09](https://github.com/`Vicenlol09)|7|
 |[mrtivivanco](https://github.com/mrtivivanco)||
 |[VicenteZapataT](https://github.com/VicenteZapataT)||
 |[JoseBernal](https://github.com/jpbernalg2005)||
