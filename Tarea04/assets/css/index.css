@@ -1,0 +1,218 @@
+body {
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  background: #ffe5ec;    
+}
+
+.encabezado { 
+    background: #ff87ab; 
+}
+
+h2 {
+  font-weight: 700
+}
+
+.encabezado__logo img { height: 28px; }
+
+
+.encabezado__contenedor {
+  max-width: 1000px;
+  padding: 10px 12px;
+  display: flex;                 /* <- clave */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;                 /* <- clave */
+  gap: 10px;
+}
+
+a.menu__enlace{
+  display:inline-block;
+  padding:10px 30px;
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  border:2px solid whitesmoke; 
+  cursor: pointer; 
+}
+
+button.menu__enlace--boton{
+  display:inline-block;
+  padding:10px 30px;
+  border-radius:30px;
+  color:#fff;
+  background:#faa4bd;             
+  border:2px solid #faa4bd;        
+}
+
+a.menu__enlace:hover,
+button.menu__enlace--boton:hover{
+  background:#fff;
+  color:#f564a9;
+  border:2px solid whitesmoke  
+}
+
+.hero__contenedor {
+    text-align: center
+}
+
+.hero__titulo{
+  display: inline-block;             
+  margin: 16px 0;
+  padding: .15em 0;                         /* aire arriba/abajo */
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1.1;  
+
+  background: linear-gradient(50deg, #ce1d5e, #da3783, #6a00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.principal { padding: 1rem; }   
+
+.categoria__titulo {
+  font-weight: 500
+
+}
+
+.categoria__img {
+    height: 80px;
+    display: block;
+}
+
+.categorias__grid {
+    display: grid;
+    gap: 16px; /*separacion*/
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /*haz una grilla de tarjetas que nunca sea más angosta que 220px; en pantallas grandes pon varias por fila, en pantallas chicas reduce a 2 o 1 por fila, siempre con 16px de separación*/
+}
+
+.categoria {
+    display: inline-block;
+    border: solid;
+    border-color: #595758;
+    border-radius: 10%;
+    padding: 10%;
+  
+
+}
+
+#categorias-titulo {
+  margin: 30px
+}
+
+h2 {
+    background: linear-gradient(50deg, #e654c4, #a32761, #6a00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+
+.categorias__grid a {
+    color:#595758; 
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+}
+
+
+.categoria--acne:hover,
+.categoria--skincare:hover,
+.categoria--makeup:hover,
+.categoria--tips:hover,
+.categoria--quiz:hover {
+    background-color: #fcf0cc;
+  
+}
+
+
+
+.link-categoria {
+    display: flex;
+    color:#a32761;
+    gap:10px;
+    justify-content: center;
+    font-weight: 700;
+    text-decoration: none
+
+}
+
+
+
+.carrusel-img__head {
+  display:flex;
+  margin: 30px;
+  gap: 8px;
+  justify-content: center;
+}
+
+
+.carrusel-img__head{
+  display: flex;
+  align-items: center;   /* o baseline si prefieres */
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;       /* permite que el título baje a otra línea si falta espacio */
+}
+
+.carrusel-img__head h2{
+  margin: 0;
+  line-height: 1.2;      /* un poco más alta para que no “corte” las letras */
+  min-width: 0;          /* CLAVE en flex: deja que el texto encoja y no se recorte */
+  /* opcional: limita ancho para que no choque con el icono */
+  /* max-width: 22ch; */
+}
+
+.carrusel-img__head img{
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;        /* que el icono no intente estirarse */
+}
+
+/* por si algún contenedor tenía overflow oculto */
+.carrusel-img__head{ overflow: visible; }
+
+
+
+
+/* 1) Centra y limita el ancho del carrusel */
+#carouselExampleCaptions{
+  width: min(100%, 520px);  /* ajusta 520px a tu gusto (400–600px) */
+  margin: 16px auto;        /* centrado */
+  border-radius: 16px;      /* opcional */
+  overflow: hidden;         /* opcional, para los bordes redondeados */
+}
+
+#carouselExampleCaptions .carousel-caption { color: #ffc2e2 }
+
+/* 2) Las imágenes ocupan el ancho del carrusel y mantienen proporción */
+#carouselExampleCaptions .carousel-item img{
+  width: 100%;
+  height: auto;             /* NO recorta */
+  display: block;
+}
+
+#carouselExampleCaptions .carousel-item::after{
+  content: "";
+  position: absolute;
+  inset: 0;                          /* top/right/bottom/left: 0 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.25) 0%,
+    rgba(0,0,0,.55) 70%
+  );                                  /* gradiente sutil */
+  z-index: 1;                         /* debajo del texto */
+}
+
+/* Asegura que el caption quede por encima del overlay */
+#carouselExampleCaptions .carousel-caption{ z-index: 2; }
+
