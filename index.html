@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulario - API DV externa</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 2rem; background:#f7f8fb; color:#111 }
+    .card { background:white; padding:1.25rem; border-radius:12px; box-shadow:0 6px 18px rgba(10,20,40,0.06); max-width:520px; margin:auto }
+    label { display:block; margin-bottom:.5rem; font-weight:600 }
+    input[type="text"]{ width:100%; padding:.5rem .75rem; border:1px solid #d6d9e6; border-radius:8px; font-size:1rem; margin-bottom:.75rem }
+    .hint { font-size:.9rem; color:#555; margin-top:.25rem; margin-bottom:.75rem }
+    button { margin-top:.25rem; padding:.5rem .9rem; border-radius:8px; border:0; background:#0b66ff; color:white; font-weight:600; cursor:pointer }
+    .dv { margin-top:.75rem; font-size:1rem }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>API para calcular DV de RUT</h2>
+    <form id="rutForm" novalidate>
+      <label for="rut">RUT (sin dígito verificador)</label>
+      <input id="rut" name="rut" type="text"
+             placeholder="Ej: 12345678"
+             pattern="^\d{1,8}$"
+             autocomplete="off"
+      />
+
+      <div class="hint">Ingresa solo el número del RUT (sin DV) y presiona Calcular DV.</div>
+
+      <label for="dv">Dígito verificador</label>
+      <input id="dv" name="dv" type="text" readonly placeholder="DV calculado aparecerá aquí" />
+
+      <button type="submit">Calcular DV</button>
+    </form>
+  </div>
+
+  <!-- Cargamos la API y luego nuestro script principal -->
+  <script src="dvApi.js"></script>
+  <script>
+    const form = document.getElementById('rutForm');
+    const inputRut = document.getElementById('rut');
+    const inputDV = document.getElementById('dv');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      inputDV.value = '';
+      const value = inputRut.value.trim();
+      // validar pattern
+      const pattern = new RegExp(inputRut.getAttribute('pattern'));
+      if (!pattern.test(value)) {
+        alert('Por favor ingrese solo números (sin DV).');
+        return;
+      }
+
+      // Llamada a la API externa
+      calcularDV_API(value)
+        .then(dv => {
+          inputDV.value = dv;
+        })
+        .catch(err => {
+          alert('Error: ' + err);
+        });
+    });
+  </script>
+</body>
+</html>
