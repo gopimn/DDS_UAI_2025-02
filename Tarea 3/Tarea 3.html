@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculo de Digito Verificador del RUT </title>
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    body { margin: 0; padding: 24px; background: #f7f7f8; color: #111; }
+    .card { max-width: 640px; margin: 0 auto; background: #fff; border-radius: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 20px; }
+    h1 { font-size: 1.2rem; margin: 0 0 12px; }
+    label { font-weight: 600; display: block; margin-bottom: 8px; }
+    input[type="text"] { width: 100%; padding: 12px 14px; border: 1px solid #d0d0d5; border-radius: 10px; font-size: 16px; }
+    input[type="text"]:focus { border-color: #4a76fd; outline: none; box-shadow: 0 0 0 3px rgba(74,118,253,.15); }
+    .grid { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: end; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #1f6bff; background: #2b70ff; color: #fff; font-weight: 600; cursor: pointer; }
+    .out { margin-top: 14px; background: #f5f7fb; border: 1px dashed #cfd5e3; padding: 12px; border-radius: 10px; }
+    .row { display: grid; gap: 10px; margin-top: 10px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .small { font-size: .9rem; color: #555; }
+    details { margin-top: 10px; }
+    summary { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Calcular Dígito Verificador del RUT (Módulo 11)</h1>
+
+    <form id="rutForm" novalidate>
+      <div class="row">
+        <label for="rutBody">RUT <em>sin dígito verificador</em></label>
+        <div class="grid">
+          <!-- pattern: acepta 27.962.409 o 27962409 (sin DV, sin guion) -->
+          <input
+            id="rutBody"
+            name="rutBody"
+            type="text"
+            placeholder="27.962.409"
+            pattern="(?:\d{1,3}(?:\.\d{3})+|\d{1,8})"
+            inputmode="numeric"
+            autocomplete="off"
+            required
+          />
+          <button id="btnCalcular" type="button">Calcular DV</button>
+        </div>
+      </div>
+
+      <div class="out" id="resultado" hidden>
+        <div><strong>DV calculado:</strong> <span id="dv" class="mono"></span></div>
+        <div><strong>RUT completo:</strong> <span id="rutCompleto" class="mono"></span></div>
+      </div>
+
+      <details id="pasos" hidden>
+        <summary>Ver pasos del cálculo</summary>
+        <div class="small mono" id="detallePasos"></div>
+      </details>
+
+      <div style="margin-top:12px">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const onlyBody = (s) => (s || "").toUpperCase().replace(/[^0-9.]/g, "");     
+    const stripDots = (s) => (s || "").replace(/\./g, "");                         
+    const groupThousands = (digits) => {                                          
+      let r = "", c = 0;
+      for (let i = digits.length - 1; i >= 0; i--) {
+        r = digits[i] + r; c++;
+        if (c === 3 && i !== 0) { r = "." + r; c = 0; }
+      }
+      return r;
+    };
+
+    // Cálculo del DV con los 7 pasos que nos dice la pagina
+    function calcularDV_pasadoEnPasos(cuerpoSinPuntos) {
+      // Escribimos el RUT pero sin el numero despues del -
+      const cuerpo = cuerpoSinPuntos;
+
+      // Volvemos a ordenar pero derecha a izquierda (lo damos vuelta)
+      const reversed = cuerpo.split("").reverse().map(Number);
+
+      // Multiplicar por serie 2..7 repetidamente
+      const serie = [2,3,4,5,6,7];
+      const productos = reversed.map((dig, idx) => dig * serie[idx % 6]);
+
+      // Sumar resultados
+      const suma = productos.reduce((a,b) => a + b, 0);
+
+      // Dividir por 11 y obtener el resto "a la antigua"
+      const divisionEntera = Math.floor(suma / 11);
+      const producto11 = divisionEntera * 11;
+      const resto = Math.abs(suma - producto11); // como en la página
+
+      // Restar a 11 - restoAnterior
+      const onceMenosResto = 11 - resto;
+
+      // Ultima parte en caso de 11 o 10
+      let dv;
+      if (onceMenosResto === 11) dv = "0";
+      else if (onceMenosResto === 10) dv = "K";
+      else dv = String(onceMenosResto);
+
+      // Para mostrar pasos
+      return {
+        cuerpo,
+        reversed,
+        productos,
+        suma,
+        divisionEntera,
+        producto11,
+        resto,
+        onceMenosResto,
+        dv
+      };
+    }
+
+    const form = document.getElementById("rutForm");
+    const input = document.getElementById("rutBody");
+    const btnCalcular = document.getElementById("btnCalcular");
+    const boxResultado = document.getElementById("resultado");
+    const spDV = document.getElementById("dv");
+    const spRUT = document.getElementById("rutCompleto");
+    const det = document.getElementById("pasos");
+    const detBody = document.getElementById("detallePasos");
+
+    function calcularYMostrar() {
+      input.setCustomValidity("");
+      const value = onlyBody(input.value);
+      input.value = value; 
+
+      if (!input.checkValidity()) {
+        input.setCustomValidity("Formato inválido. Usa 27.962.409 o 27962409 (sin DV).");
+        input.reportValidity();
+        return;
+      }
+
+      const cuerpoDigits = stripDots(value);
+      if (!/^\d{1,8}$/.test(cuerpoDigits)) {
+        input.setCustomValidity("El cuerpo del RUT debe tener 1 a 8 dígitos.");
+        input.reportValidity();
+        return;
+      }
+
+      // CALCULO
+      const r = calcularDV_pasadoEnPasos(cuerpoDigits);
+
+      // RESULTADO
+      const cuerpoFormateado = groupThousands(r.cuerpo);
+      const rutCompleto = `${cuerpoFormateado}-${r.dv}`;
+      spDV.textContent = r.dv;
+      spRUT.textContent = rutCompleto;
+      boxResultado.hidden = false;
+
+      // PASOS DE CALCULO explicados
+      detBody.innerHTML = [
+        `1) Cuerpo sin DV: ${cuerpoFormateado}`,
+        `2) Derecha → izquierda: ${r.reversed.join(" ")}`,
+        `3) Serie 2..7: productos = ${r.productos.join(" + ").replace(/ \+ /g, " + ")} = ${r.suma}`,
+        `4) Suma de productos: ${r.suma}`,
+        `5) División por 11: ${r.suma} / 11 = ${r.divisionEntera} → ${r.divisionEntera} × 11 = ${r.producto11}`,
+        `6) Resto (valor absoluto): |${r.suma} − ${r.producto11}| = ${r.resto}`,
+        `7) 11 − ${r.resto} = ${r.onceMenosResto} → DV = ${r.dv} (10→K, 11→0)`
+      ].join("<br>");
+      det.hidden = false;
+    }
+
+    btnCalcular.addEventListener("click", calcularYMostrar);
+    form.addEventListener("submit", (e) => {
+      if (boxResultado.hidden) {
+        e.preventDefault();
+        e.stopPropagation();
+        calcularYMostrar();
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        calcularYMostrar();
+      }
+    });
+  </script>
+</body>
+</html>
