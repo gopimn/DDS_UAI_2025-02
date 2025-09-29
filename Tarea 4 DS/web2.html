@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5"> 
+        <div class="row mt-5">
+            <div class="col-md-5 offset-md-3"> 
+                <h1>Crear una cuenta</h1> 
+                <div  class="form-group">
+                    <form action="">
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" placeholder="Juanito@gmail.com" name="email" required><br><br>
+                    <label for="Rut">Rut :</label>
+                    <input type="Rut" id="Rut" placeholder="sin guion ni puntos" pattern="[0-9]{9}" name="Rut" required><br><br>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                    <input type="submit" value="Crear cuenta">  
+                    <span id="dv-output" ></span>
+                    </form>
+                    <a href="web.html"> Ir a pagina principal</a>
+                </div> 
+            </div>
+        </div>      
+    </div>
+<script src="scrip.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,2 @@
+    Quize agregar una segunda web a la que eres redirigido al ingresar tus datos, aunque todavia me falta poder guardar los datos recibidos y utilizarlos para que la cuenta quede iniciada en el servidor.
+    EL archivo server.mjs se encarga de calcular el digito verificador mientras que el scrip.js se encarga de conectar el cliente con el servidor y almacenar los datos, tmabien en caso de fallar la conexion existe una respuesta para comunicarselo al cliente.

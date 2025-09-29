@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página web</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Color de fondo azul claro */
+            color: #333; /* Color de texto principal (foreground) */
+            margin: 20px;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #2e8b57; /* Color verde para los headers */
+            margin-top: 15px;
+        }
+        
+        .scaled-image {
+            width: 50%; /* Imagen escalada al 50% */
+            height: auto;
+            border: 2px solid #2e8b57;
+        }
+        
+        .normal-image {
+            width: 300px;
+            height: auto;
+            margin: 10px 0;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Video de YouTube embedido -->
+        <h1>Video de YouTube importante </h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=5mGuCdlCcNM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <!-- 10 headers -->
+        <h1>Mi pagina web</h1>
+        <h2>Bienvenidos</h2>
+        <h3>esta es mi pagina web</h3>
+        <h4>Es una pagina webh4>
+        <h5>Esto es gracias a que se encuentra en la web</h5>
+        <h6>La web es diveritida</h6>
+        <h2>Puedes aprender mucho en la web</h2>
+        <h3>Definitivamente es una web</h3>
+        <h4>Creo que es una pagina web</h4>
+        <h5> Ya no esoty muy seguro si es una pagina web</h5>
+        
+        <!-- Imágenes (una normal y una escalada) -->
+        <h2>Imágenes</h2>
+        <p>Gato gordo:</p>
+        <img src="https://tse4.mm.bing.net/th/id/OIP.tJu4He1wtX6OYGxBIg3TCAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Imagen de ejemplo" class="normal-image">
+        
+        <p>Otro gato gordo:</p>
+        <img src=https://c2.staticflickr.com/8/7030/6441356761_fbdc2f2ac9.jpg" alt="Imagen escalada" class="scaled-image">
+        
+        <!-- Botón que redirige -->
+        <h2>Boton de regreso</h2>
+        <button onclick="window.location.href='https://www.google.com'"> Adios </button>
+        
+        <!-- Option box y checkbox -->
+        <h2>Formulario random</h2>
+        <form>
+            <label for="cats">Gatos favoritos:</label>
+            <select id="cats" name="cats">
+                <option value=">Naranja">Naranja</option>
+                <option value="Negro">Negro</option>
+                <option value="Gris">Gris</option>
+                <option value="Blanco">Blanco</option>
+            </select>
+            
+            <br><br>
+            
+            <input type="checkbox" id="animal1" name="animal1" value="dog">
+            <label for="animal1"> Tengo un perro</label><br>
+            <input type="checkbox" id="animal2" name="animal2" value="Cat">
+            <label for="animal2"> Tengo un gato</label><br>
+        </form>
+        
+        <!-- Hipervínculo -->
+        <h2>Hipervínculo</h2>
+        <p>Visita <a href="https://supergracioso.com/videos-de-gatos-graciosos/" target="_blank">Este</a> siitio para mas informacion.</p>
+        
+        <!-- Lista -->
+        <h2>Lista de nombres de gato</h2>
+        <ul>
+            <li>Bola de nieve 1</li>
+            <li>Bola de nieve 2</li>
+            <li>Bola de nieve 3</li>
+            <li>Bola de nieve 4</li>
+            <li>Bola de nieve 5</li>
+        </ul>
+    </div>
+</body>
+</html>
