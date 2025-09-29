@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Validador de RUT</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>Validador de RUT</h1>
+
+    <form id="rutForm" autocomplete="off">
+      <label for="rut">Ingrese RUT (sin DV)</label>
+      <input type="text" id="rut" placeholder="Ej: 12345678" required />
+
+      <label for="dv">Dígito Verificador</label>
+      <input type="text" id="dv" placeholder="Se calculará aquí" readonly />
+
+      <label for="rutCompleto">RUT Completo</label>
+      <input type="text" id="rutCompleto" placeholder="Se mostrará aquí" readonly />
+
+      <button class="primary-btn" type="submit">Validar</button>
+    </form>
+
+    <p id="resultado"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
