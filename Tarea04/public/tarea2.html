@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2 FORMULARIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container centro my-5">
+        <div class="row cuadra color001 rounded-4 shadow-lg w-50">
+            <div class="col-12 text-center">
+                <h2 class="my-3 text-white">Registro</h2>
+                <form id="formulario">
+                    <div class="mb-3 text-start">
+                        <label for="nombre" class="form-label text-white">Nombre:</label>
+                        <input type="text" class="form-control input-dark" id="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label for="email" class="form-label text-white">Correo:</label>
+                        <input type="email" class="form-control input-dark" id="email" required placeholder="example@email.com">
+                    </div> 
+                    <div class="mb-3 row">
+                        <div class="col-8 text-start">
+                            <label for="rut" class="form-label text-white">RUT:</label>
+                            <input type="text" class="form-control input-dark" id="rut" required pattern="^\d{1,2}\.?\d{3}\.?\d{3}-?[\dkK]{1}" placeholder="12.345.678-9">
+                            <div class="invalid-feedback">El RUT ingresado no es válido.</div>
+                        </div>
+                        <div class="col-4 text-start">
+                            <label for="digito" class="form-label text-white">DV:</label>
+                            <input type="text" class="form-control input-dark" id="digito" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-1 text-start">
+                        <label for="password" class="form-label text-white">Contraseña:</label>
+                        <input type="password" class="form-control input-dark" id="password" placeholder="********" required>
+                    </div>
+                    <div class="text-start mb-3">
+                        <span class="link-pass">¿Olvidaste tu contraseña? <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&autoplay=1" target="_blank">click aquí</a></span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="submit" class="btn btn-green px-4">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
