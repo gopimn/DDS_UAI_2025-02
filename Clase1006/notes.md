@@ -1,6 +1,6 @@
 # para la prueba
 
-- express api
+- [express api](https://expressjs.com/en/api.html)
 - [Effect](https://react.dev/reference/react/useEffect)
 - [use reducer](https://react.dev/reference/react/useReducer)
 - [use state](https://react.dev/reference/react/useState)
@@ -22,6 +22,8 @@ using [vite](https://vite.dev/)
 npm create vite@latest my-app -- --template react
 ```
 
+https://react.dev/learn/extracting-state-logic-into-a-reducer
+
 
 # redux
 
@@ -38,6 +40,11 @@ entonces lo que hace es que se basa en un solo objeto inmutable que se llama el 
 suscribe dispatch
 
 el problema que tiene es que anade mucho overhead
+
+Porfa leerse esto:
+
+https://react.dev/learn/extracting-state-logic-into-a-reducer
+
 
 ## refs
 
