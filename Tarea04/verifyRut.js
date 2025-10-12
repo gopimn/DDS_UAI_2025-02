@@ -48,10 +48,7 @@ function validateRut(rut, verifier) {
         result = "k";
     }
     
-    if (result == verifier) {
-        return true;
-    } else return false;
-
+    return result;
 }
 
 function validateRutForm(){
@@ -59,12 +56,15 @@ function validateRutForm(){
     const verifierDigit = document.getElementById("verifier").value;
     let [rut, verifier] = rutToNum(rutRaw, verifierDigit);
 
-    if (validateRut(rut, verifier)){
-        alert("Rut Valido!");
+    let calculatedVerifier = validateRut(rut,verifier);
+    let isValid = calculatedVerifier == verifier;
+
+    if (isValid){
+        alert("El digito verificador calculado es: "+ calculatedVerifier + "\n¡Rut Valido! :)");
         return true;
     }
     else{
-        alert("Rut Invalido!");
+        alert("El digito verificador calculado es: "+ calculatedVerifier + "\n¡Rut Invalido! :(");
         return false;
     } 
 
