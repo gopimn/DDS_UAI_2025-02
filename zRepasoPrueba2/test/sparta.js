@@ -39,36 +39,9 @@ app.post("/usuarios", (req,res) => {
    const { usuario } = req.body;
    usuarios.push(usuario);
    console.log(usuario);
-   res.send('user added in the name of the peace');
+   res.senxd('user added in the name of the peace');
 })
 
 app.listen(port, () => {
    console.log("runnin on 3000");
 });
-
-/*
-
-
-- listen ty definir puerto
-- definir usuario
-- next en el middleware
-- en el post obtener el usuario del json del body
-
-
-
-curl -H 'Content-Type: application/json'  -d '{"usuario":"asdasdasd"}'       -X POST       http://127.0.0.1:3000/usuarios
-
-curl http://127.0.0.1:3000/usuarios 
-
-
-## maybe
-
-- retornar los codigos
-   - 2xx exito
-   - 4xx fail
-   - 5xx culpa ser servidor
-- try catch
-
-
-
-*/
