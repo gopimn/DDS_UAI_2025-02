@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": 1762118315619,
+    "email": "martingonzalezfritz@gmail.com",
+    "passwordHash": "$2a$10$VqbjV9F/qXwGTmtNFTwvpuliMnLtB/vet7vwomq4d0nUTH26LPogi",
+    "handicap": null,
+    "friends": [],
+    "createdAt": "2025-11-02T21:18:35.619Z"
+  }
+]

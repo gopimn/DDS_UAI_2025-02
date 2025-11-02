@@ -15,7 +15,7 @@ const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const ITEMS_FILE = path.join(DATA_DIR, 'items.json');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-me';
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 async function readJson(file, fallback) {
   try {
@@ -41,7 +41,7 @@ app.get('/health', (req, res) => res.json({ ok: true }));
 // ============ AUTH ============
 
 app.post('/api/auth/register', async (req, res) => {
-  const { email, password } = req.body || {};
+  const { email, password, name, birthDate, bio, photo } = req.body || {};
   if (!email || !password) return res.status(400).json({ error: 'missing' });
 
   const users = await readJson(USERS_FILE, []);
@@ -52,6 +52,10 @@ app.post('/api/auth/register', async (req, res) => {
     id: Date.now(), 
     email, 
     passwordHash: hash,
+    name: name || 'Player',
+    birthDate: birthDate || null,
+    bio: bio || '',
+    photo: photo || 'https://via.placeholder.com/150?text=No+Photo',
     handicap: null,
     friends: [],
     createdAt: new Date().toISOString()
@@ -60,7 +64,7 @@ app.post('/api/auth/register', async (req, res) => {
   await writeJson(USERS_FILE, users);
   
   const token = jwt.sign({ sub: user.id, email }, JWT_SECRET, { expiresIn: '7d' });
-  res.json({ token, user: { id: user.id, email } });
+  res.json({ token, user: { id: user.id, email, name: user.name, bio: user.bio, photo: user.photo } });
 });
 
 app.post('/api/auth/login', async (req, res) => {
@@ -75,7 +79,7 @@ app.post('/api/auth/login', async (req, res) => {
   if (!ok) return res.status(401).json({ error: 'invalid' });
   
   const token = jwt.sign({ sub: user.id, email }, JWT_SECRET, { expiresIn: '7d' });
-  res.json({ token, user: { id: user.id, email, handicap: user.handicap } });
+  res.json({ token, user: { id: user.id, email, name: user.name, bio: user.bio, photo: user.photo, handicap: user.handicap } });
 });
 
 // ============ AUTH MIDDLEWARE ============
@@ -349,6 +353,31 @@ app.get('/api/users/search', async (req, res) => {
     .map(u => ({ id: u.id, email: u.email, handicap: u.handicap }));
   
   res.json(results);
+});
+
+// ============ UPDATE PROFILE ============
+app.put('/api/user/profile', authRequired, async (req, res) => {
+  const { name, birthDate, bio, photo } = req.body || {};
+  
+  const users = await readJson(USERS_FILE, []);
+  const idx = users.findIndex(u => u.id === Number(req.user.sub));
+  if (idx < 0) return res.status(404).json({ error: 'not-found' });
+  
+  if (name) users[idx].name = name;
+  if (birthDate) users[idx].birthDate = birthDate;
+  if (bio !== undefined) users[idx].bio = bio;
+  if (photo) users[idx].photo = photo;
+  
+  await writeJson(USERS_FILE, users);
+  
+  res.json({ 
+    id: users[idx].id,
+    email: users[idx].email,
+    name: users[idx].name,
+    birthDate: users[idx].birthDate,
+    bio: users[idx].bio,
+    photo: users[idx].photo
+  });
 });
 
 app.listen(PORT, () => console.log(`🏌️ GolfSocial backend running on http://localhost:${PORT}`));

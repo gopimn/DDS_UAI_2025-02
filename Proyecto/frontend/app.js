@@ -40,22 +40,25 @@ function useTheme() {
 function Header({ user, logout, dark, toggle, t, lang, setLang, tab, setTab }) {
   return (
     <div className="app-header">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div>
-          <h1>⛳ GolfSocial</h1>
-          <p className="small">{user.email}</p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px 20px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <div>
+            {user.photo && <img src={user.photo} alt="Avatar" style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} />}
+            <h1 style={{ margin: '0', fontSize: '24px' }}>⛳ GolfSocial</h1>
+            <p className="small" style={{ margin: '5px 0 0 0' }}>{user.name || user.email}</p>
+          </div>
         </div>
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <button onClick={toggle}>{dark ? '☀️' : '🌙'}</button>
-          <select value={lang} onChange={(e) => setLang(e.target.value)}>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <button onClick={toggle} style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', padding: '8px 12px', cursor: 'pointer', borderRadius: '4px' }}>{dark ? '☀️' : '🌙'}</button>
+          <select value={lang} onChange={(e) => setLang(e.target.value)} style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', padding: '8px 12px', cursor: 'pointer', borderRadius: '4px' }}>
             <option value="en">English</option>
             <option value="es">Español</option>
           </select>
-          <button onClick={logout}>{t('logout')}</button>
+          <button onClick={logout} style={{ background: 'var(--danger)', border: 'none', color: 'white', padding: '8px 16px', cursor: 'pointer', borderRadius: '4px' }}>Salir</button>
         </div>
       </div>
-      <div style={{ display: 'flex', gap: '10px', marginTop: '15px', borderBottom: '1px solid var(--border)' }}>
-        {['feed', 'friends', 'search'].map(t_name => (
+      <div style={{ display: 'flex', gap: '10px', paddingLeft: '20px', borderBottom: '1px solid var(--border)' }}>
+        {['feed', 'friends', 'search', 'profile'].map(t_name => (
           <button
             key={t_name}
             onClick={() => setTab(t_name)}
@@ -68,8 +71,7 @@ function Header({ user, logout, dark, toggle, t, lang, setLang, tab, setTab }) {
               borderBottom: tab === t_name ? '3px solid var(--accent)' : 'none'
             }}
           >
-            {t_name === 'feed' ? '📱 ' : t_name === 'friends' ? '👥 ' : '🔍 '}
-            {t_name.charAt(0).toUpperCase() + t_name.slice(1)}
+            {t_name === 'feed' ? '📱 Feed' : t_name === 'friends' ? '👥 Amigos' : t_name === 'search' ? '🔍 Descubrir' : '👤 Perfil'}
           </button>
         ))}
       </div>
@@ -80,52 +82,111 @@ function Header({ user, logout, dark, toggle, t, lang, setLang, tab, setTab }) {
 function AuthPanel({ onLogin, onRegister, t, lang, setLang, dark, toggle }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [birthDate, setBirthDate] = useState('');
+  const [bio, setBio] = useState('');
+  const [photo, setPhoto] = useState('');
   const [isLogin, setIsLogin] = useState(true);
 
+  const handlePhotoUpload = (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => setPhoto(event.target?.result || '');
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
-    <div className="auth-container" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg)', color: 'var(--text)' }}>
-      <div className="form-card" style={{ maxWidth: '400px', width: '100%' }}>
-        <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1>⛳ GolfSocial</h1>
-          <div style={{ display: 'flex', gap: '10px' }}>
-            <button onClick={toggle}>{dark ? '☀️' : '🌙'}</button>
-            <select value={lang} onChange={(e) => setLang(e.target.value)}>
-              <option value="en">EN</option>
-              <option value="es">ES</option>
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg)', color: 'var(--text)', padding: '20px' }}>
+      <div className="form-card" style={{ maxWidth: '500px', width: '100%' }}>
+        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+          <h1 style={{ fontSize: '32px', margin: '0 0 10px 0' }}>⛳ GolfSocial</h1>
+          <p style={{ margin: '0', fontSize: '14px', color: 'var(--text)', opacity: 0.7 }}>Red Social para Golfistas</p>
+        </div>
+        
+        <div style={{ display: 'flex', gap: '10px', marginBottom: '20px', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <button onClick={toggle} style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', padding: '8px 12px', cursor: 'pointer', borderRadius: '4px' }}>
+              {dark ? '☀️' : '🌙'}
+            </button>
+            <select value={lang} onChange={(e) => setLang(e.target.value)} style={{ marginLeft: '10px', background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', padding: '8px 12px', cursor: 'pointer', borderRadius: '4px' }}>
+              <option value="en">English</option>
+              <option value="es">Español</option>
             </select>
           </div>
         </div>
+
+        <h2 style={{ marginBottom: '20px' }}>{isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'}</h2>
         
-        <h2>{isLogin ? 'Login' : 'Register'}</h2>
         <input
           className="input"
           type="email"
-          placeholder={t('email')}
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           className="input"
           type="password"
-          placeholder={t('password')}
+          placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
+        {!isLogin && (
+          <>
+            <input
+              className="input"
+              type="text"
+              placeholder="Nombre Completo"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              className="input"
+              type="date"
+              placeholder="Fecha de Nacimiento"
+              value={birthDate}
+              onChange={(e) => setBirthDate(e.target.value)}
+            />
+            <textarea
+              className="input"
+              placeholder="Biografía"
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
+              style={{ minHeight: '80px', resize: 'vertical' }}
+            ></textarea>
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px' }}>Foto de Perfil:</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handlePhotoUpload}
+                style={{ width: '100%', padding: '8px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px', color: 'var(--text)' }}
+              />
+              {photo && (
+                <img src={photo} alt="preview" style={{ width: '80px', height: '80px', borderRadius: '50%', marginTop: '10px', objectFit: 'cover' }} />
+              )}
+            </div>
+          </>
+        )}
+
         <button
           className="primary"
           onClick={() => {
             if (isLogin) onLogin(email, password);
-            else onRegister(email, password);
+            else onRegister(email, password, name, birthDate, bio, photo);
           }}
-          style={{ width: '100%' }}
+          style={{ width: '100%', marginBottom: '10px' }}
         >
-          {isLogin ? t('login') : t('register')}
+          {isLogin ? 'Iniciar Sesión' : 'Registrarse'}
         </button>
         <button
           onClick={() => setIsLogin(!isLogin)}
-          style={{ width: '100%', marginTop: '10px', background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', padding: '10px', cursor: 'pointer', borderRadius: '4px' }}
+          style={{ width: '100%', background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', padding: '10px', cursor: 'pointer', borderRadius: '4px' }}
         >
-          {isLogin ? t('register') : t('login')}
+          {isLogin ? '¿No tienes cuenta? Registrate' : '¿Ya tienes cuenta? Inicia sesión'}
         </button>
       </div>
     </div>
@@ -140,12 +201,12 @@ function App() {
   const [items, setItems] = useState([]);
   const [friends, setFriends] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
-  const [tab, setTab] = useState('feed');
+  const [tab, setTab] = useState('profile');
   const [form, setForm] = useState({ date: '', course: '', strokes: '', par: 72 });
   const [message, setMessage] = useState('');
   const [searchQ, setSearchQ] = useState('');
 
-  const API_BASE = 'http://localhost:4000';
+  const API_BASE = 'http://localhost:5000';
 
   const getToken = () => localStorage.getItem('token');
 
@@ -183,20 +244,21 @@ function App() {
     }
   }
 
-  async function register(email, password) {
+  async function register(email, password, name, birthDate, bio, photo) {
     try {
       const res = await fetch(`${API_BASE}/api/auth/register`, {
         method: 'POST',
         headers: headers(),
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password, name, birthDate, bio, photo })
       });
       if (!res.ok) throw new Error('register-failed');
       const data = await res.json();
       localStorage.setItem('token', data.token);
       setUser(data.user);
-      setMessage('Registered!');
+      setMessage('¡Bienvenido a GolfSocial!');
     } catch (e) {
-      setMessage('Register failed');
+      setMessage('Error en registro');
+      console.error(e);
     }
   }
 
@@ -211,10 +273,11 @@ function App() {
       const data = await res.json();
       localStorage.setItem('token', data.token);
       setUser(data.user);
-      setMessage('Welcome!');
+      setMessage('¡Sesión iniciada!');
       loadFriends();
     } catch (e) {
-      setMessage('Login failed');
+      setMessage('Error: Email o contraseña incorrectos');
+      console.error(e);
     }
   }
 
@@ -287,6 +350,23 @@ function App() {
       setAllUsers(data);
     } catch (e) {
       console.warn('Search error:', e);
+    }
+  }
+
+  async function updateProfile(name, birthDate, bio, photo) {
+    try {
+      const res = await fetch(`${API_BASE}/api/user/profile`, {
+        method: 'PUT',
+        headers: headers(),
+        body: JSON.stringify({ name, birthDate, bio, photo })
+      });
+      if (!res.ok) throw new Error('update-failed');
+      const data = await res.json();
+      setUser({ ...user, name: data.name, birthDate: data.birthDate, bio: data.bio, photo: data.photo });
+      setMessage('¡Perfil actualizado!');
+    } catch (e) {
+      setMessage('Error al actualizar perfil');
+      console.error(e);
     }
   }
 
@@ -372,6 +452,33 @@ function App() {
                   <button onClick={() => addFriend(u.id)}>Add Friend</button>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {tab === 'profile' && (
+          <div style={{ maxWidth: '600px' }}>
+            <h2>Mi Perfil</h2>
+            <div className="form-card">
+              {user.photo && <img src={user.photo} alt="Perfil" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', marginBottom: '15px' }} />}
+              <div style={{ marginBottom: '15px' }}>
+                <label>Foto de Perfil:</label>
+                <input type="file" accept="image/*" onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (ev) => updateProfile(user.name, user.birthDate, user.bio, ev.target?.result || '');
+                    reader.readAsDataURL(file);
+                  }
+                }} style={{ width: '100%', padding: '8px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px' }} />
+              </div>
+              <input type="text" placeholder="Nombre" defaultValue={user.name} onBlur={(e) => updateProfile(e.target.value, user.birthDate, user.bio, user.photo)} style={{ marginBottom: '10px', padding: '10px', background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: '4px', width: '100%' }} />
+              <input type="date" placeholder="Fecha de Nacimiento" defaultValue={user.birthDate || ''} onBlur={(e) => updateProfile(user.name, e.target.value, user.bio, user.photo)} style={{ marginBottom: '10px', padding: '10px', background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: '4px', width: '100%' }} />
+              <textarea placeholder="Biografía" defaultValue={user.bio} onBlur={(e) => updateProfile(user.name, user.birthDate, e.target.value, user.photo)} style={{ marginBottom: '10px', padding: '10px', background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: '4px', width: '100%', minHeight: '100px' }} />
+              <div className="stat-item">
+                <div className="stat-value">{user.handicap || 'N/A'}</div>
+                <div className="stat-label">Handicap</div>
+              </div>
             </div>
           </div>
         )}
