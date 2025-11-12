@@ -1,0 +1,52 @@
+/* Ajustes para dimensiones del acordeón y fotos del carrusel */
+.accordion, .carousel {
+  max-width: 900px;
+  margin: 1rem auto;
+}
+/* Limita la altura del contenido del acordeón y añade scroll si es necesario */
+.accordion .accordion-body {
+  max-height: 240px; /* ajusta según prefieras */
+  overflow-y: auto;
+}
+/* Muestra las imágenes completas sin recorte */
+.carousel-item img {
+  width: 100%;
+  height: auto;        /* mantiene proporción natural */
+  max-height: 500px;   /* evita imágenes demasiado grandes */
+  object-fit: contain; /* muestra la imagen completa dentro del contenedor */
+  background-color: #000; /* opcional: relleno cuando haya espacio vacío */
+}
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 576px) {
+  .carousel-item img { max-height: 300px; }
+  .accordion .accordion-body { max-height: 160px; }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  min-width: 300px; /* ancho mínimo para columnas */
+  margin: 10px;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Cambia a columna */
+  }
+  .column {
+    width: 100%; /* Ocupa todo el ancho */
+    margin: 5px 0; /* Espacio entre columnas */
+  }
+}
+
+.background {
+  background-color: #5a6c7e; /* Color de fondo claro */
+  padding: 20px; /* Espacio alrededor del contenido */
+  border-radius: 10px; /* Bordes redondeados */
+}
