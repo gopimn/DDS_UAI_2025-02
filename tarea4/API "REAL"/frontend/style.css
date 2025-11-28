@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 350px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #2f3640;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  text-align: left;
+}
+
+input {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 0.5rem;
+  transition: border 0.2s;
+}
+
+input:focus {
+  border-color: #00a8ff;
+  outline: none;
+}
+
+#dv {
+  background: #f1f2f6;
+  font-weight: bold;
+}
+
+.primary-btn {
+  background: #00a8ff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.primary-btn:hover {
+  background: #0097e6;
+}
+
+#resultado {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
